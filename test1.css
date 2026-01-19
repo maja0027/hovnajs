@@ -1,0 +1,203 @@
+/* Stylování hlavního formuláře */
+#fapi-form-form {
+  /* Stylování kontejneru formuláře */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Stylování chybové hlášky */
+.fapi-form-alert {
+  color: #ff0000;
+  background-color: #ffe5e5;
+  padding: 10px;
+  border: 1px solid #ff0000;
+  margin-bottom: 20px;
+}
+
+/* Stylování komponenty OrderIntentData */
+.fapi-form-order-intent-data {
+  margin-bottom: 30px;
+}
+
+/* Stylování skupiny položek */
+.fapi-form-items {
+  margin-bottom: 30px;
+}
+
+/* Stylování základních údajů */
+.fapi-form-basic-data {
+  margin-bottom: 30px;
+}
+
+/* Stylování vlastních polí */
+.fapi-form-custom-fields {
+  margin-bottom: 30px;
+}
+
+/* Stylování způsobů dopravy */
+.fapi-form-shipping-methods {
+  margin-bottom: 30px;
+}
+
+/* Stylování způsobů platby */
+.fapi-form-payment-methods {
+  margin-bottom: 30px;
+}
+
+/* Stylování výsledku objednávky */
+.fapi-form-result {
+  margin-bottom: 30px;
+}
+
+/* Stylování kontejneru výsledku objednávky */
+.fapi-form-result-container {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+
+/* Stylování tlačítka odeslání */
+.fapi-submit-button {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.fapi-submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Stylování načítání při odesílání */
+.fapi-sending {
+  color: #555555;
+  font-size: 16px;
+}
+
+/* Stylování plovoucí ceny */
+.fapi-form-float-price {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  padding: 15px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+/* Stylování vstupních polí */
+.fapi-input,
+.fapi-input-email,
+.fapi-input-phone,
+.fapi-input-company,
+.fapi-input-ico,
+.fapi-input-dic,
+.fapi-input-icdph,
+.fapi-input-first_name,
+.fapi-input-last_name,
+.fapi-input-street,
+.fapi-input-city,
+.fapi-input-zip,
+.fapi-input-country,
+.fapi-input-notes {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+/* Stylování skupin vlastních polí */
+.fapi-form-custom-field,
+.fapi-form-custom-field-0,
+.fapi-form-custom-field-1,
+.fapi-form-custom-field-2 {
+  margin-bottom: 20px;
+}
+
+/* Stylování jednotlivých skupin položek */
+.fapi-form-item-group,
+.fapi-form-item-group-0,
+.fapi-form-item-group-1,
+.fapi-form-item-group-2 {
+  margin-bottom: 20px;
+}
+
+/* Stylování cen v komponentě Prices */
+.fapi-form-prices {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+/* Stylování slevy */
+.fapi-form-prices-discount {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+/* Stylování celkové ceny */
+.fapi-form-prices-repayment-with-vat {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* Stylování seznamu splátek */
+.fapi-form-prices-repayment-list {
+  margin-top: 20px;
+}
+
+/* Stylování tlačítka pro zobrazení splátek */
+.fapi-form-prices-repayment-list-button {
+  background-color: #28a745;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.fapi-form-prices-repayment-list-button:hover {
+  background-color: #218838;
+}
+
+/* Stylování zobrazení seznamu splátek */
+.fapi-form-prices-repayment-list-view {
+  margin-top: 15px;
+}
+
+/* Stylování jednotlivých položek seznamu splátek */
+.fapi-form-prices-repayment-list-view-index {
+  margin-bottom: 10px;
+}
+
+/* Stylování štítků v seznamu splátek */
+.fapi-form-prices-repayment-list-view-label {
+  font-weight: bold;
+  color: #555555;
+}
+
+/* Stylování hodnot v seznamu splátek */
+.fapi-form-prices-repayment-list-view-value {
+  color: #333333;
+}
+
+/* Příklad stylování pro konkrétní index v seznamu splátek */
+.fapi-form-prices-repayment-list-view-index-1 {
+  /* Styly pro první splátku */
+  background-color: #e9ecef;
+}
+
+/* Stylování komponenty BasicBlock */
+.fapi-form-basic-block {
+  margin-bottom: 30px;
+}
+
+/* Další vlastní styly podle potřeby */
