@@ -581,9 +581,13 @@ html, body { background: #fcf1e1 !important; }
   display: none !important;
 }
 
-/* větší posun dolů pro pravý blok (množství + cena) */
-.fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 {
+/* POSUN DOLŮ jen MNOŽSTVÍ (+ / input / -), ne cenu */
+.fapi-order-form .fapi-form-item .f-col-auto.f-min-w-min {
   position: relative !important;
-  top: 5px !important;  /* bylo 2px */
-  align-self: center !important;
+  top: 5px !important;   /* stejné číslo jako předtím */
+}
+
+/* ZRUŠ posun celého pravého bloku (pokud tam zůstal) */
+.fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 {
+  top: 0 !important;
 }
