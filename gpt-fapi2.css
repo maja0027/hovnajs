@@ -298,3 +298,29 @@ textarea:focus {
   font-style: italic !important;
   text-align: center !important;
 }
+/* --- 0c. Pozadí všude kolem (aby okraje nezůstaly bílé) --- */
+html, body {
+  background: var(--h-bg-paper) !important;
+}
+
+/* Pozadí formuláře i jeho nejčastějších wrapperů ve FAPI */
+#fapi-form-form,
+#fapi-form-form-form,
+#fapi-form,
+.fapi-form,
+.fapi-form-wrapper,
+.fapi-form-container,
+.fapi-modal,
+.fapi-modal-content,
+.fapi-modal-body,
+.fapi-popup,
+.fapi-popup-content {
+  background-color: var(--h-bg-paper) !important;
+}
+
+/* Pro jistotu i vnitřní sekce, které někdy mají bílé pozadí */
+#fapi-form-form .fapi-section,
+#fapi-form-form .fapi-box,
+#fapi-form-form .fapi-content {
+  background-color: var(--h-bg-paper) !important;
+}
