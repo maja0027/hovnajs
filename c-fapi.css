@@ -1,0 +1,308 @@
+/* 
+   HOVÍNEK - FAPI Custom CSS Theme (Premium Design s obrázkovým tlačítkem)
+   URL pro produkci: https://www.hovinek.cz/fapi-theme-with-image.css
+   
+   POZNÁMKA: Tato verze používá obrázek tlačítka. Pro použití nahrát soubor 
+   orange-button.png na server a aktualizovat cestu níže.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --h-bg-paper: #fcf1e1;
+  --h-border: #e8dcc6;
+  --h-text-main: #3e3215;
+  --h-text-secondary: #6e5d2f;
+  --h-green: #656839;
+  --h-green-hover: #4a4d2a;
+  --h-orange: #ff8563;
+  --h-orange-hover: #ff6b47;
+  --h-white: #ffffff;
+  --h-radius: 20px;
+  --h-radius-sm: 12px;
+  --h-error: #d16d6d;
+}
+
+/* --- ZÁKLADNÍ NASTAVENÍ STRÁNKY (IFRAME) --- */
+body {
+  background-color: var(--h-bg-paper) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Nunito', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- 1. Hlavní kontejner --- */
+#fapi-form-form {
+  font-family: 'Nunito', sans-serif !important;
+  color: var(--h-text-main) !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 24px 20px !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+}
+
+/* Nadpisy */
+#fapi-form-form h1,
+#fapi-form-form h2,
+#fapi-form-form h3,
+.fapi-heading,
+.fapi-element-heading {
+  font-family: 'Baloo 2', cursive !important;
+  color: var(--h-text-main) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 1.5rem !important;
+  text-transform: none !important;
+}
+
+/* --- 2. Inputy a formulářové prvky --- */
+label, 
+.fapi-label {
+  font-family: 'Baloo 2', cursive !important;
+  color: var(--h-text-secondary) !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  margin-bottom: 8px !important;
+  display: block !important;
+}
+
+.fapi-input,
+.fapi-input-email,
+.fapi-input-phone,
+.fapi-input-company,
+.fapi-input-ico,
+.fapi-input-dic,
+.fapi-input-icdph,
+.fapi-input-first_name,
+.fapi-input-last_name,
+.fapi-input-street,
+.fapi-input-city,
+.fapi-input-zip,
+.fapi-input-country,
+.fapi-input-notes,
+select,
+textarea {
+  background-color: var(--h-white) !important;
+  border: 2px solid var(--h-border) !important;
+  border-radius: var(--h-radius-sm) !important;
+  padding: 14px 18px !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--h-text-main) !important;
+  box-shadow: 0 2px 8px rgba(62, 50, 21, 0.04) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  outline: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin-bottom: 20px !important;
+}
+
+.fapi-input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--h-orange) !important;
+  box-shadow: 0 0 0 4px rgba(255, 133, 99, 0.15), 0 4px 12px rgba(62, 50, 21, 0.08) !important;
+  transform: translateY(-1px) !important;
+}
+
+.fapi-input:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--h-border) !important;
+  box-shadow: 0 4px 12px rgba(62, 50, 21, 0.06) !important;
+}
+
+/* --- 3. Karty pro Dopravu a Platbu --- */
+.fapi-form-shipping-methods,
+.fapi-form-payment-methods {
+  margin-bottom: 30px !important;
+}
+
+.fapi-form-shipping-methods label,
+.fapi-form-payment-methods label {
+  display: flex !important;
+  align-items: center !important;
+  padding: 16px 18px !important;
+  background: var(--h-white) !important;
+  border: 2px solid var(--h-border) !important;
+  border-radius: var(--h-radius-sm) !important;
+  margin-bottom: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 6px rgba(62, 50, 21, 0.03) !important;
+}
+
+.fapi-form-shipping-methods label:hover,
+.fapi-form-payment-methods label:hover {
+  border-color: var(--h-orange) !important;
+  background-color: rgba(255, 133, 99, 0.03) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(255, 133, 99, 0.12) !important;
+}
+
+.fapi-form-shipping-methods input[type="radio"]:checked + *,
+.fapi-form-payment-methods input[type="radio"]:checked + * {
+  font-weight: 800 !important;
+  color: var(--h-orange) !important;
+}
+
+.fapi-form-shipping-methods input[type="radio"],
+.fapi-form-payment-methods input[type="radio"] {
+  accent-color: var(--h-orange) !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin-right: 15px !important;
+  cursor: pointer !important;
+}
+
+/* --- 4. Rekapitulace objednávky --- */
+.fapi-form-prices {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%) !important;
+  border: 2px dashed var(--h-border) !important;
+  border-radius: var(--h-radius) !important;
+  padding: 24px !important;
+  margin-bottom: 30px !important;
+  position: relative !important;
+  box-shadow: 0 4px 12px rgba(62, 50, 21, 0.05) !important;
+}
+
+.fapi-form-prices::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: radial-gradient(circle at top right, rgba(255, 133, 99, 0.05), transparent 50%) !important;
+  border-radius: var(--h-radius) !important;
+  pointer-events: none !important;
+}
+
+.fapi-form-prices-repayment-with-vat {
+  font-family: 'Baloo 2', cursive !important;
+  font-size: 36px !important;
+  font-weight: 800 !important;
+  color: var(--h-orange) !important;
+  text-align: center !important;
+  display: block !important;
+  margin-top: 12px !important;
+  text-shadow: 0 2px 8px rgba(255, 133, 99, 0.2) !important;
+}
+
+/* --- 5. TLAČÍTKO S OBRÁZKEM POZADÍ --- */
+.fapi-submit-button {
+  /* Použijeme obrázek jako pozadí */
+  background: transparent !important;
+  background-image: url('https://raw.githack.com/maja0027/hovnajs/main/fdfbdf.png') !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  
+  color: white !important;
+  font-family: 'Baloo 2', cursive !important;
+  font-weight: 800 !important;
+  font-size: 22px !important;
+  padding: 22px 40px !important;
+  border: none !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 70px !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  box-shadow: 0 8px 20px rgba(255, 107, 71, 0.35), 0 2px 8px rgba(255, 133, 99, 0.2) !important;
+  text-transform: none !important;
+  margin-top: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  position: relative !important;
+  overflow: visible !important;
+  letter-spacing: 0.02em !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Emoji nebo ikona nákupního košíku */
+.fapi-submit-button::after {
+  content: "🛒" !important;
+  font-size: 20px !important;
+  margin-left: 8px !important;
+}
+
+.fapi-submit-button:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 0 12px 32px rgba(255, 107, 71, 0.45), 0 4px 12px rgba(255, 133, 99, 0.3) !important;
+  filter: brightness(1.05) !important;
+}
+
+.fapi-submit-button:active {
+  transform: translateY(-1px) scale(0.98) !important;
+  box-shadow: 0 4px 12px rgba(255, 107, 71, 0.3) !important;
+}
+
+/* --- 6. Chybové stavy --- */
+.fapi-form-alert,
+.fapi-error {
+  color: var(--h-error) !important;
+  background: linear-gradient(135deg, rgba(209, 109, 109, 0.08) 0%, rgba(209, 109, 109, 0.04) 100%) !important;
+  padding: 16px 20px !important;
+  border: 2px solid rgba(209, 109, 109, 0.3) !important;
+  border-radius: var(--h-radius-sm) !important;
+  margin-bottom: 25px !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  box-shadow: 0 4px 12px rgba(209, 109, 109, 0.1) !important;
+}
+
+.fapi-form-alert::before {
+  content: "⚠️" !important;
+  font-size: 20px !important;
+}
+
+/* --- 7. Checkboxy --- */
+input[type="checkbox"] {
+  accent-color: var(--h-orange) !important;
+  width: 18px !important;
+  height: 18px !important;
+  cursor: pointer !important;
+}
+
+/* --- 8. Loading stavy --- */
+.fapi-sending {
+  color: var(--h-text-secondary) !important;
+  font-style: italic !important;
+  text-align: center !important;
+  padding: 20px !important;
+}
+
+/* --- 9. Testovací režim banner --- */
+.fapi-test-mode-banner,
+[class*="test"],
+[class*="Test"] {
+  background: linear-gradient(135deg, var(--h-orange) 0%, var(--h-orange-hover) 100%) !important;
+  color: white !important;
+  font-family: 'Baloo 2', cursive !important;
+  font-weight: 700 !important;
+  padding: 12px 20px !important;
+  border-radius: var(--h-radius-sm) !important;
+  margin-bottom: 20px !important;
+  text-align: center !important;
+  box-shadow: 0 4px 12px rgba(255, 133, 99, 0.2) !important;
+}
+
+/* --- 10. Footer --- */
+.fapi-footer,
+[class*="fapi-powered"] {
+  opacity: 0.4 !important;
+  font-size: 10px !important;
+  text-align: center !important;
+  margin-top: 24px !important;
+  color: var(--h-text-secondary) !important;
+}
