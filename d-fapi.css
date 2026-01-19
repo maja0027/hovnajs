@@ -1,0 +1,224 @@
+/* 
+   HOVÍNEK - FAPI Custom CSS Theme (Opravená verze)
+   URL pro produkci: https://www.hovinek.cz/fapi-theme.css
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --h-bg-paper: #fcf1e1;
+  --h-border: #e8dcc6;
+  --h-text-main: #3e3215;
+  --h-text-secondary: #6e5d2f;
+  --h-orange: #ff8563;
+  --h-orange-hover: #ff6b47;
+  --h-white: #ffffff;
+  --h-radius: 20px;
+  --h-radius-sm: 12px;
+  --h-error: #d16d6d;
+}
+
+/* ===== POZADÍ - KRÉMOVÉ ===== */
+html {
+  background-color: #fcf1e1 !important;
+}
+
+body {
+  background-color: #fcf1e1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Nunito', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Všechny FAPI wrappery */
+#fapi-member-zone,
+#fapi-form,
+.fapi-form-wrapper,
+.fapi-container {
+  background-color: #fcf1e1 !important;
+}
+
+/* ===== HLAVNÍ KONTEJNER ===== */
+#fapi-form-form {
+  font-family: 'Nunito', sans-serif !important;
+  color: var(--h-text-main) !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 20px 16px !important;
+  box-sizing: border-box !important;
+  background-color: #fcf1e1 !important;
+}
+
+/* Nadpisy */
+#fapi-form-form h1,
+#fapi-form-form h2,
+#fapi-form-form h3,
+.fapi-heading,
+.fapi-element-heading {
+  font-family: 'Baloo 2', cursive !important;
+  color: var(--h-text-main) !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  margin-bottom: 1rem !important;
+}
+
+/* ===== LABELY ===== */
+label, 
+.fapi-label {
+  font-family: 'Baloo 2', cursive !important;
+  color: var(--h-text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+/* ===== INPUTY ===== */
+.fapi-input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  background-color: var(--h-white) !important;
+  border: 2px solid var(--h-border) !important;
+  border-radius: var(--h-radius-sm) !important;
+  padding: 12px 16px !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--h-text-main) !important;
+  box-shadow: 0 2px 6px rgba(62, 50, 21, 0.04) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+  margin-bottom: 16px !important;
+}
+
+/* Focus */
+.fapi-input:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--h-orange) !important;
+  box-shadow: 0 0 0 3px rgba(255, 133, 99, 0.12) !important;
+}
+
+/* ===== DOPRAVA A PLATBA ===== */
+.fapi-form-shipping-methods label,
+.fapi-form-payment-methods label {
+  padding: 14px !important;
+  background: var(--h-white) !important;
+  border: 2px solid var(--h-border) !important;
+  border-radius: 10px !important;
+  margin-bottom: 10px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.fapi-form-shipping-methods label:hover,
+.fapi-form-payment-methods label:hover {
+  border-color: var(--h-orange) !important;
+  background-color: rgba(255, 133, 99, 0.05) !important;
+}
+
+.fapi-form-shipping-methods input[type="radio"],
+.fapi-form-payment-methods input[type="radio"] {
+  accent-color: var(--h-orange) !important;
+}
+
+/* ===== CENOVÁ REKAPITULACE - OPRAVENO ===== */
+.fapi-form-prices {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: 2px dashed var(--h-border) !important;
+  border-radius: var(--h-radius) !important;
+  padding: 20px !important;
+  margin: 20px 0 !important;
+}
+
+/* OPRAVA: Text "Celkem k úhradě" - zmenšeno */
+.fapi-form-prices-repayment-with-vat {
+  font-family: 'Baloo 2', cursive !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: var(--h-orange) !important;
+  text-align: right !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ===== TLAČÍTKO - OPRAVENÝ POMĚR STRAN ===== */
+.fapi-submit-button {
+  background: linear-gradient(135deg, #ff8563 0%, #ff6b47 100%) !important;
+  color: white !important;
+  font-family: 'Baloo 2', cursive !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  
+  /* OPRAVA: Zachování poměru stran */
+  height: 64px !important;
+  max-width: 600px !important;
+  width: 100% !important;
+  margin: 24px auto 0 auto !important;
+  
+  padding: 0 32px !important;
+  border: none !important;
+  border-radius: 50px !important;
+  cursor: pointer !important;
+  
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  
+  box-shadow: 0 6px 16px rgba(255, 107, 71, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.fapi-submit-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(255, 107, 71, 0.4) !important;
+}
+
+.fapi-submit-button:active {
+  transform: translateY(0) !important;
+}
+
+/* ===== CHYBOVÉ HLÁŠKY ===== */
+.fapi-form-alert {
+  background: rgba(209, 109, 109, 0.1) !important;
+  border: 2px solid rgba(209, 109, 109, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 14px 18px !important;
+  color: var(--h-error) !important;
+  font-weight: 600 !important;
+  margin-bottom: 20px !important;
+}
+
+/* ===== CHECKBOXY ===== */
+input[type="checkbox"] {
+  accent-color: var(--h-orange) !important;
+  cursor: pointer !important;
+}
+
+/* ===== SKRYTÍ TESTOVACÍHO BANNERU (MŮŽE ZPŮSOBOVAT CHYBU) ===== */
+.fapi-test-mode-banner {
+  background: var(--h-orange) !important;
+  color: white !important;
+  padding: 10px !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  margin-bottom: 16px !important;
+}
+
+/* ===== FOOTER ===== */
+.fapi-footer {
+  opacity: 0.5 !important;
+  font-size: 11px !important;
+  text-align: center !important;
+  margin-top: 20px !important;
+}
