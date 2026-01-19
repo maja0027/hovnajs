@@ -600,3 +600,34 @@ html, body { background: #fcf1e1 !important; }
   transform: translateY(1px) !important;
 }
 
+/* === Robust fix: vycentrování ikon v +/- bez baseline problémů === */
+
+.fapi-order-form .f-col-auto.f-min-w-min .f-flex.f-items-center{
+  align-items: center !important;
+}
+
+/* plus/minus tlačítka: místo grid použijeme flex a zabijeme line-height */
+.fapi-order-form .f-col-auto.f-min-w-min
+  .f-flex-shrink-0.f-w-6.f-h-6.f-place-content-center{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 0 !important;
+}
+
+/* svg a jeho wrappery – žádný baseline */
+.fapi-order-form .f-col-auto.f-min-w-min
+  .f-flex-shrink-0.f-w-6.f-h-6.f-place-content-center svg{
+  display: block !important;
+  line-height: 0 !important;
+  vertical-align: middle !important;
+}
+
+/* kdyby nějaká utilita tlačila SVG přes margin/padding */
+.fapi-order-form .f-col-auto.f-min-w-min
+  .f-flex-shrink-0.f-w-6.f-h-6.f-place-content-center svg,
+.fapi-order-form .f-col-auto.f-min-w-min
+  .f-flex-shrink-0.f-w-6.f-h-6.f-place-content-center path{
+  margin: 0 !important;
+  padding: 0 !important;
+}
