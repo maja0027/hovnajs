@@ -600,26 +600,21 @@ html, body { background: #fcf1e1 !important; }
   transform: translateY(1px) !important;
 }
 
-/* === FINÁLNÍ FIX: posuň CELÝ blok + / qty / - o chlup dolů === */
+/* === POSUN DOLŮ: celý blok s množstvím (+/input/-) a cenou uvnitř řádku produktu === */
 
-/* přesně ten wrapper: <div class="f-flex f-items-center ... f-justify-end"> */
-.fapi-order-form .fapi-form-item .f-col-auto.f-min-w-min
-  .f-flex.f-items-center.f-justify-end{
+/* pravý sloupec v produktovém řádku (obsahuje qty + price) */
+.fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 {
   position: relative !important;
-  top: 1px !important;
+  top: 2px !important; /* uprav na 1px/3px podle oka */
 }
 
-/* ať jsou všechny tři prvky stejně vysoké (pro stabilní optiku) */
-.fapi-order-form .fapi-form-item .f-col-auto.f-min-w-min
-  .f-flex-shrink-0.f-w-6.f-h-6.f-place-content-center{
-  width: 28px !important;
-  height: 28px !important;
+/* aby se už nevracel zpět přes f-self-start */
+.fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 {
+  align-self: center !important;
 }
 
-.fapi-order-form .fapi-form-item .f-col-auto.f-min-w-min
-  input.f-form-input.f-w-14.f-h-7{
-  height: 28px !important;
-  line-height: 28px !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+/* volitelně: zrušit vnitřní margin-top, který to rozhodí */
+.fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 .f-mt-1,
+.fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 .sm\:f-mt-0 {
+  margin-top: 0 !important;
 }
