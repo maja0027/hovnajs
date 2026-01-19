@@ -1,0 +1,165 @@
+/* HOVÍNEK – FAPI SAFE CSS (bez @import, bez CSS proměnných) */
+
+/* 1) Pozadí všude (bílé okraje pryč) */
+html, body {
+  background: #fcf1e1 !important;
+}
+
+/* FAPI wrappery – když existují, přebarvíme je taky */
+#fapi-form-form,
+#fapi-form,
+.fapi-form,
+.fapi-form-wrapper,
+.fapi-form-container,
+.fapi-modal,
+.fapi-modal-content,
+.fapi-modal-body,
+.fapi-popup,
+.fapi-popup-content,
+[class*="fapi"] {
+  background-color: #fcf1e1 !important;
+}
+
+/* 2) Fonty všude (fallbacky; pokud chceš Baloo/Nunito, viz poznámka níže) */
+body, body * {
+  font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  color: #3e3215 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+h1, h2, h3, label, legend, .fapi-heading {
+  font-family: "Baloo 2", Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-weight: 800 !important;
+}
+
+/* 3) Nadpisy sekcí (Položky a ceny / Fakturační údaje / Shrnutí...) */
+h2, .fapi-heading, legend {
+  text-align: center !important;
+  background: rgba(101, 104, 57, 0.10) !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  border-radius: 14px !important;
+  padding: 10px 14px !important;
+  margin: 18px 0 14px !important;
+}
+
+/* 4) Pole – jemná “papírová” bílá, ne sterilní */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+  background: #fff9ef !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 16px !important;
+  padding: 12px 16px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #3e3215 !important;
+  box-shadow: 0 2px 6px rgba(62, 50, 21, 0.04) !important;
+  outline: none !important;
+  transition: all 0.18s ease !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(110, 93, 47, 0.65) !important;
+  font-weight: 700 !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #656839 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(101, 104, 57, 0.16) !important;
+}
+
+/* 5) Popisky */
+label {
+  color: #6e5d2f !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+/* 6) Checkbox / radio do olivové */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: #656839 !important;
+}
+
+/* 7) +/- tlačítka a malé buttony (z šedé do olivové) */
+button {
+  background: rgba(101, 104, 57, 0.12) !important;
+  color: #656839 !important;
+  border: 1px solid rgba(101, 104, 57, 0.22) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 2px 6px rgba(62, 50, 21, 0.06) !important;
+  transition: all 0.15s ease !important;
+}
+
+button:hover {
+  background: rgba(101, 104, 57, 0.18) !important;
+  border-color: rgba(101, 104, 57, 0.35) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 8) Submit / hlavní CTA – olivová jako na webu */
+input[type="submit"],
+button[type="submit"],
+.fapi-submit-button {
+  background: #656839 !important;
+  color: #faedd9 !important;
+  border: none !important;
+  border-radius: 18px !important;
+  padding: 16px 32px !important;
+  font-size: 20px !important;
+  font-weight: 900 !important;
+  font-family: "Baloo 2", Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  width: 100% !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 20px rgba(101, 104, 57, 0.22) !important;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+.fapi-submit-button:hover {
+  background: #4a4d2a !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 30px rgba(101, 104, 57, 0.28) !important;
+}
+
+/* 9) Shrnutí / ceny */
+.fapi-form-prices,
+[class*="prices"],
+[class*="summary"] {
+  background: rgba(255, 255, 255, 0.45) !important;
+  border: 2px dashed rgba(101, 104, 57, 0.35) !important;
+  border-radius: 16px !important;
+  padding: 18px !important;
+}
+
+.fapi-form-prices-repayment-with-vat,
+[class*="total"],
+[class*="repayment"] {
+  color: #656839 !important;
+  font-weight: 900 !important;
+}
+
+/* 10) “Testovací režim” lišta – z oranžové do jemné (když se trefíme třídou) */
+.fapi-form-notice,
+.fapi-alert,
+.alert,
+.notice,
+[class*="alert"],
+[class*="notice"] {
+  background: rgba(101, 104, 57, 0.12) !important;
+  border: 1px solid rgba(101, 104, 57, 0.25) !important;
+  color: #3e3215 !important;
+  border-radius: 14px !important;
+  padding: 12px 14px !important;
+}
