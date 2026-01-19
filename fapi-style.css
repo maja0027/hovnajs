@@ -1,0 +1,183 @@
+/* 
+   HOVÍNEK - FAPI Custom CSS Theme 
+   Copy this entire file content into your FAPI form settings (Vzhled > Vlastní CSS).
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --h-bg-paper: #fcf1e1;
+  --h-border: #e8dcc6;
+  --h-text-main: #3e3215;
+  --h-text-secondary: #6e5d2f;
+  --h-green: #656839;
+  --h-green-hover: #4a4d2a;
+  --h-white: #ffffff;
+  --h-radius: 16px;
+}
+
+/* --- Container & Typography --- */
+
+.fapi-form {
+  font-family: 'Nunito', sans-serif !important;
+  color: var(--h-text-main) !important;
+  background-color: transparent !important; /* Let the modal background show through */
+  max-width: 100% !important;
+  padding: 10px !important;
+}
+
+.fapi-form h1, 
+.fapi-form h2, 
+.fapi-form h3,
+.fapi-form .fapi-heading {
+  font-family: 'Baloo 2', cursive !important;
+  color: var(--h-text-main) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 20px !important;
+}
+
+/* --- Inputs --- */
+
+.fapi-form label {
+  font-family: 'Baloo 2', cursive !important;
+  color: var(--h-text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+.fapi-form input[type="text"],
+.fapi-form input[type="email"],
+.fapi-form input[type="tel"],
+.fapi-form input[type="number"],
+.fapi-form input[type="password"],
+.fapi-form select,
+.fapi-form textarea {
+  background-color: var(--h-white) !important;
+  border: 2px solid var(--h-border) !important;
+  border-radius: var(--h-radius) !important;
+  padding: 12px 16px !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--h-text-main) !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 2px 4px rgba(62, 50, 21, 0.03) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.fapi-form input:focus,
+.fapi-form select:focus,
+.fapi-form textarea:focus {
+  border-color: var(--h-green) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(101, 104, 57, 0.15) !important;
+}
+
+.fapi-form input::placeholder {
+  color: #b0a695 !important;
+  font-weight: 500 !important;
+}
+
+/* --- Order Items (Summary) --- */
+
+.fapi-order-summary {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border: 2px dashed var(--h-border) !important;
+  border-radius: var(--h-radius) !important;
+  padding: 20px !important;
+  margin-bottom: 25px !important;
+}
+
+.fapi-product-line {
+  border-bottom: 1px solid rgba(232, 220, 198, 0.5) !important;
+  padding-bottom: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.fapi-product-name {
+  font-family: 'Baloo 2', cursive !important;
+  font-weight: 700 !important;
+  color: var(--h-text-main) !important;
+  font-size: 18px !important;
+}
+
+.fapi-product-price {
+  font-weight: 800 !important;
+  color: var(--h-green) !important;
+}
+
+/* --- Submit Button --- */
+
+.fapi-button, 
+.fapi-form button[type="submit"] {
+  background-color: var(--h-green) !important;
+  color: #faedd9 !important; /* Light cream text */
+  font-family: 'Baloo 2', cursive !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  padding: 16px 32px !important;
+  border-radius: var(--h-radius) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+  margin-top: 15px !important;
+  box-shadow: 0 4px 10px rgba(101, 104, 57, 0.2) !important;
+  text-transform: none !important;
+  background-image: none !important; /* Remove generic gradients */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.fapi-button:hover, 
+.fapi-form button[type="submit"]:hover {
+  background-color: var(--h-green-hover) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(101, 104, 57, 0.3) !important;
+}
+
+/* --- Checkboxes & Radios --- */
+
+.fapi-form input[type="radio"],
+.fapi-form input[type="checkbox"] {
+  accent-color: var(--h-green) !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin-right: 10px !important;
+  vertical-align: middle !important;
+  cursor: pointer !important;
+}
+
+/* --- Fieldsets / Sections --- */
+
+.fapi-form fieldset {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 0 20px 0 !important;
+}
+
+.fapi-form legend {
+  font-family: 'Baloo 2', cursive !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--h-green) !important;
+  margin-bottom: 15px !important;
+  border-bottom: 2px solid var(--h-border) !important;
+  width: 100% !important;
+  padding-bottom: 5px !important;
+}
+
+/* --- Error Messages --- */
+
+.fapi-error-msg,
+.error-message {
+  color: #d16d6d !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  margin-top: 5px !important;
+}
