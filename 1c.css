@@ -1,0 +1,289 @@
+/* =========================================================
+   HOVÍNEK – FAPI THEME (clean, unified)
+   Scope: only inside .fapi-order-form
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* Page background (form page / preview) */
+html, body {
+  background: #fcf1e1 !important;
+}
+
+/* Base typography + colors */
+.fapi-order-form {
+  font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  color: #3e3215 !important;
+}
+
+/* Headings (section headers rendered as divs inside .fapi-container-header) */
+.fapi-order-form .fapi-container-header,
+.fapi-order-form .fapi-form-basic-block-title,
+.fapi-order-form .fapi-form-basic-block-title * {
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.2px !important;
+  color: #3e3215 !important;
+}
+
+/* Make section headers look more “hovínkově” */
+.fapi-order-form .fapi-container-header {
+  background: rgba(255, 249, 239, 0.35) !important;
+  border: 1px solid rgba(232, 220, 198, 0.9) !important;
+  border-radius: 16px !important;
+}
+
+/* ---------------------------------------------------------
+   Global input look (matches phone/country)
+   --------------------------------------------------------- */
+.fapi-order-form input[type="text"],
+.fapi-order-form input[type="email"],
+.fapi-order-form input[type="tel"],
+.fapi-order-form input[type="number"],
+.fapi-order-form input[type="password"],
+.fapi-order-form select,
+.fapi-order-form textarea,
+.fapi-order-form .f-form-input {
+  background: #fff9ef !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  outline: none !important;
+  color: #3e3215 !important;
+}
+
+/* Focus */
+.fapi-order-form input:focus,
+.fapi-order-form select:focus,
+.fapi-order-form textarea:focus,
+.fapi-order-form .f-form-input:focus {
+  border-color: #656839 !important;
+  box-shadow: 0 0 0 4px rgba(101, 104, 57, 0.16) !important;
+}
+
+/* Labels */
+.fapi-order-form label {
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  color: #6e5d2f !important;
+}
+
+/* ---------------------------------------------------------
+   Product rows (checkbox + name + qty + price)
+   --------------------------------------------------------- */
+.fapi-order-form .fapi-form-item {
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  border-radius: 16px !important;
+  padding: 10px 12px !important;
+}
+
+/* Ensure price block is same background as the row */
+.fapi-order-form .fapi-form-item-price {
+  background: #fff9ef !important;
+  border-radius: 12px !important;
+  padding: 6px 10px !important;
+  color: #3e3215 !important;
+  font-weight: 800 !important;
+}
+
+/* ---------------------------------------------------------
+   Quantity controls (+ / -) in #fff9ef
+   --------------------------------------------------------- */
+/* The +/- buttons are divs with these utility classes */
+.fapi-order-form .fapi-form-items .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center {
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  box-shadow: none !important;
+}
+
+.fapi-order-form .fapi-form-items .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center svg {
+  color: #656839 !important;
+}
+
+.fapi-order-form .fapi-form-items .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center:hover {
+  background: #ffffff !important;
+}
+
+/* Quantity input (the small number field) */
+.fapi-order-form .fapi-form-items input[type="number"].f-form-input,
+.fapi-order-form .fapi-form-items .f-form-input.f-w-14 {
+  background: #fff9ef !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* ---------------------------------------------------------
+   Phone field (prefix button + input) – unify with others
+   --------------------------------------------------------- */
+.fapi-order-form .fapi-form-default-input-phone button[type="button"] {
+  background: #fff9ef !important;
+  border: 2px solid #e8dcc6 !important;
+  border-right: 0 !important;
+  border-radius: 16px 0 0 16px !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Phone input joins the prefix button */
+.fapi-order-form .fapi-form-default-input-phone input[name="phone"],
+.fapi-order-form .fapi-form-default-input-phone .phone-input {
+  background: #fff9ef !important;
+  border: 2px solid #e8dcc6 !important;
+  border-left: 0 !important;
+  border-radius: 0 16px 16px 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Kill grey “border-r” look */
+.fapi-order-form .fapi-form-default-input-phone .f-border-gray-300 {
+  border-color: #e8dcc6 !important;
+}
+
+/* ---------------------------------------------------------
+   Country field (fake input + button) – unify with others
+   --------------------------------------------------------- */
+/* The fake input is absolute + transparent – remove its border and clicks */
+.fapi-order-form .country-fake-input {
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+}
+
+/* Make the visible button look like other inputs */
+.fapi-order-form .fapi-form-default-input-country button[type="button"] {
+  background: #fff9ef !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Dropdown panel border color (when opened) */
+.fapi-order-form .fapi-form-default-input-country .f-border {
+  border-color: #e8dcc6 !important;
+}
+
+/* ---------------------------------------------------------
+   Checkboxes – background #fff9ef + unified border
+   --------------------------------------------------------- */
+.fapi-order-form input[type="checkbox"].fapi-form-base-input-checkbox,
+.fapi-order-form input[type="checkbox"].f-form-checkbox {
+  background-color: #fff9ef !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 6px !important;
+  accent-color: #656839 !important; /* checkmark/fill in brand green */
+  box-shadow: none !important;
+}
+
+/* ---------------------------------------------------------
+   “Doručit na jinou adresu” – outline together with checkbox
+   --------------------------------------------------------- */
+.fapi-order-form .fapi-form-default-input-show-shipping-address {
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  border-radius: 16px !important;
+  padding: 10px 12px !important;
+}
+
+/* ---------------------------------------------------------
+   Summary (“Celkem k úhradě”) – clean, no ugly boxes
+   --------------------------------------------------------- */
+/* Remove borders/rings inside result area */
+.fapi-order-form .fapi-form-result-container .f-border,
+.fapi-order-form .fapi-form-result-container [class*="f-border"],
+.fapi-order-form .fapi-form-result-container .f-ring-1,
+.fapi-order-form .fapi-form-result-container [class*="f-ring"] {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Keep summary background same as page */
+.fapi-order-form .fapi-form-result-container,
+.fapi-order-form .fapi-form-result,
+.fapi-order-form .fapi-form-result-container .f-p-6,
+.fapi-order-form .fapi-form-result-prices-group,
+.fapi-order-form .fapi-form-result-prices,
+.fapi-order-form .fapi-form-result-prices .fapi-form-prices {
+  background: #fcf1e1 !important;
+}
+
+/* Make the “Celkem k úhradě” row typography nicer */
+.fapi-order-form .fapi-form-prices-repayment-with-vat-label {
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  color: #6e5d2f !important;
+}
+
+.fapi-order-form .fapi-form-prices-repayment-with-vat-value {
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 26px !important;
+  color: #656839 !important;
+}
+
+/* ---------------------------------------------------------
+   Floating price container – dashed border same color + bigger text
+   --------------------------------------------------------- */
+.fapi-order-form .fapi-float-price-container {
+  background: #fff9ef !important;
+  border: 2px dashed #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 26px rgba(62, 50, 21, 0.08) !important;
+}
+
+/* Remove inner borders in float */
+.fapi-order-form .fapi-float-price-container .fapi-form-prices {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Bigger text inside float */
+.fapi-order-form .fapi-float-price-container .fapi-form-prices-repayment-with-vat-value {
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  color: #656839 !important;
+}
+
+.fapi-order-form .fapi-float-price-container .fapi-form-prices-repayment-with-vat-label {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  color: #6e5d2f !important;
+}
+
+/* ---------------------------------------------------------
+   Submit button – no outline/border, brand green
+   --------------------------------------------------------- */
+.fapi-order-form .fapi-submit-button {
+  background: #656839 !important;
+  color: #fffaf2 !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: 0 8px 20px rgba(101, 104, 57, 0.22) !important;
+  border-radius: 18px !important;
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 900 !important;
+}
+
+/* Kill “focus ring” class effect */
+.fapi-order-form .fapi-submit-button:focus,
+.fapi-order-form .fapi-submit-button:focus-visible {
+  outline: none !important;
+  box-shadow: 0 10px 26px rgba(101, 104, 57, 0.26) !important;
+}
+
+/* ---------------------------------------------------------
+   Optional: hide “Vytvořeno v prodejním systému FAPI”
+   (odkomentuj, pokud chceš pryč)
+   --------------------------------------------------------- */
+
+.fapi-order-form > p.f-mt-4.f-text-center.f-text-xs.f-text-gray-400 {
+  display: none !important;
+}
+*/
