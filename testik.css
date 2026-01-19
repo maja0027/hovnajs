@@ -1,0 +1,3 @@
+/* SMOKE TEST – musí být vidět hned */
+#fapi-form-form { outline: 6px solid magenta !important; }
+.fapi-submit-button { border-radius: 999px !important; }
