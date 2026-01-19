@@ -1,0 +1,300 @@
+/* 
+   HOVÍNEK - FAPI Custom CSS Theme
+   Fonts: Nunito (body), Baloo 2 (headings/labels/cta)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --h-bg-paper: #fcf1e1;
+  --h-border: #e8dcc6;
+  --h-text-main: #3e3215;
+  --h-text-secondary: #6e5d2f;
+
+  /* Green like the CTA button */
+  --h-green: #656839;
+  --h-green-hover: #4a4d2a;
+
+  --h-white: #ffffff;
+  --h-radius: 16px;
+  --h-error: #d16d6d;
+
+  /* Fonts */
+  --h-font-body: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --h-font-display: 'Baloo 2', 'Nunito', system-ui, sans-serif;
+}
+
+/* --- 0. Vynucení fontů opravdu všude v rámci FAPI --- */
+#fapi-form-form,
+#fapi-form-form * {
+  font-family: var(--h-font-body) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Nadpisy uvnitř formuláře + "display" prvky */
+#fapi-form-form h1,
+#fapi-form-form h2,
+#fapi-form-form h3,
+#fapi-form-form .fapi-heading,
+#fapi-form-form label,
+#fapi-form-form .fapi-submit-button,
+#fapi-form-form .fapi-form-prices-repayment-with-vat {
+  font-family: var(--h-font-display) !important;
+}
+
+/* Linky a drobný text */
+#fapi-form-form a,
+#fapi-form-form a:visited {
+  color: var(--h-green) !important;
+}
+#fapi-form-form a:hover {
+  color: var(--h-green-hover) !important;
+}
+
+/* --- 1. Hlavní kontejner --- */
+#fapi-form-form {
+  color: var(--h-text-main) !important;
+  background-color: transparent !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 10px !important;
+  box-sizing: border-box !important;
+}
+
+/* Nadpisy */
+#fapi-form-form h1,
+#fapi-form-form h2,
+#fapi-form-form h3,
+.fapi-heading {
+  color: var(--h-text-main) !important;
+  font-weight: 700 !important;
+}
+
+/* --- 2. Vstupní pole (Inputs) --- */
+.fapi-input,
+.fapi-input-email,
+.fapi-input-phone,
+.fapi-input-company,
+.fapi-input-ico,
+.fapi-input-dic,
+.fapi-input-icdph,
+.fapi-input-first_name,
+.fapi-input-last_name,
+.fapi-input-street,
+.fapi-input-city,
+.fapi-input-zip,
+.fapi-input-country,
+.fapi-input-notes,
+select,
+textarea {
+  background-color: var(--h-white) !important;
+  border: 2px solid var(--h-border) !important;
+  border-radius: var(--h-radius) !important;
+  padding: 12px 16px !important;
+  font-family: var(--h-font-body) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--h-text-main) !important;
+  box-shadow: 0 2px 4px rgba(62, 50, 21, 0.03) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+  margin-bottom: 15px !important;
+}
+
+/* Placeholder */
+#fapi-form-form input::placeholder,
+#fapi-form-form textarea::placeholder {
+  color: rgba(110, 93, 47, 0.65) !important;
+  font-weight: 600 !important;
+}
+
+/* Focus stav */
+.fapi-input:focus,
+.fapi-input-email:focus,
+.fapi-input-phone:focus,
+.fapi-input-company:focus,
+.fapi-input-ico:focus,
+.fapi-input-dic:focus,
+.fapi-input-icdph:focus,
+.fapi-input-first_name:focus,
+.fapi-input-last_name:focus,
+.fapi-input-street:focus,
+.fapi-input-city:focus,
+.fapi-input-zip:focus,
+.fapi-input-country:focus,
+.fapi-input-notes:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--h-green) !important;
+  box-shadow: 0 0 0 4px rgba(101, 104, 57, 0.15) !important;
+}
+
+/* Popisky polí */
+#fapi-form-form label {
+  color: var(--h-text-secondary) !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+/* --- 3. Tlačítko odeslání (Submit) --- */
+.fapi-submit-button {
+  background-color: var(--h-green) !important;
+  color: #faedd9 !important;
+  font-family: var(--h-font-display) !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  padding: 16px 32px !important;
+  border: none !important;
+  border-radius: var(--h-radius) !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 4px 10px rgba(101, 104, 57, 0.2) !important;
+  text-transform: none !important;
+  margin-top: 20px !important;
+}
+
+.fapi-submit-button:hover {
+  background-color: var(--h-green-hover) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(101, 104, 57, 0.3) !important;
+}
+
+/* --- 3b. Menu / kroky objednávky (barva jako CTA) --- */
+/* (Schválně široký zásah na různé FAPI varianty tříd) */
+#fapi-form-form .fapi-form-menu,
+#fapi-form-form .fapi-menu,
+#fapi-form-form .fapi-steps,
+#fapi-form-form .fapi-form-steps,
+#fapi-form-form .fapi-tabs,
+#fapi-form-form .fapi-form-tabs {
+  font-family: var(--h-font-display) !important;
+}
+
+/* Inactive položky: zelený text */
+#fapi-form-form .fapi-form-menu a,
+#fapi-form-form .fapi-menu a,
+#fapi-form-form .fapi-steps a,
+#fapi-form-form .fapi-form-steps a,
+#fapi-form-form .fapi-tabs a,
+#fapi-form-form .fapi-form-tabs a,
+#fapi-form-form .fapi-form-menu-item,
+#fapi-form-form .fapi-menu-item,
+#fapi-form-form .fapi-step,
+#fapi-form-form .fapi-tab {
+  color: var(--h-green) !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+/* Hover */
+#fapi-form-form .fapi-form-menu a:hover,
+#fapi-form-form .fapi-menu a:hover,
+#fapi-form-form .fapi-steps a:hover,
+#fapi-form-form .fapi-form-steps a:hover,
+#fapi-form-form .fapi-tabs a:hover,
+#fapi-form-form .fapi-form-tabs a:hover {
+  color: var(--h-green-hover) !important;
+}
+
+/* Active/current položka: zelené pozadí + krémový text (jako tlačítko) */
+#fapi-form-form .active,
+#fapi-form-form .is-active,
+#fapi-form-form .current,
+#fapi-form-form .selected {
+  /* jen jemně, aby to nerozbilo layout – bezpečné i když je to na <li> */
+  border-radius: 12px !important;
+}
+
+#fapi-form-form .active > a,
+#fapi-form-form .is-active > a,
+#fapi-form-form .current > a,
+#fapi-form-form .selected > a,
+#fapi-form-form a.active,
+#fapi-form-form a.is-active,
+#fapi-form-form a.current,
+#fapi-form-form a.selected {
+  background-color: var(--h-green) !important;
+  color: #faedd9 !important;
+  border-radius: 12px !important;
+  padding: 8px 12px !important;
+}
+
+/* Když má menu separátory/ikonky/čísla, zkus je přetáhnout do zelené */
+#fapi-form-form .fapi-form-menu svg,
+#fapi-form-form .fapi-menu svg,
+#fapi-form-form .fapi-steps svg,
+#fapi-form-form .fapi-form-steps svg {
+  fill: var(--h-green) !important;
+  color: var(--h-green) !important;
+}
+
+/* --- 4. Cenové boxy a rekapitulace --- */
+.fapi-form-prices {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border: 2px dashed var(--h-border) !important;
+  border-radius: var(--h-radius) !important;
+  padding: 20px !important;
+  margin-bottom: 25px !important;
+}
+
+.fapi-form-prices-repayment-with-vat {
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  color: var(--h-green) !important;
+  text-align: right !important;
+}
+
+.fapi-form-prices-discount {
+  color: var(--h-error) !important;
+  font-weight: bold !important;
+}
+
+/* --- 5. Způsoby dopravy a platby --- */
+.fapi-form-shipping-methods,
+.fapi-form-payment-methods {
+  margin-bottom: 20px !important;
+}
+
+.fapi-form-shipping-methods label,
+.fapi-form-payment-methods label {
+  display: flex !important;
+  align-items: center !important;
+  padding: 10px !important;
+  background: var(--h-white) !important;
+  border: 1px solid var(--h-border) !important;
+  border-radius: 12px !important;
+  margin-bottom: 8px !important;
+  cursor: pointer !important;
+}
+
+.fapi-form-shipping-methods input[type="radio"],
+.fapi-form-payment-methods input[type="radio"] {
+  accent-color: var(--h-green) !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin-right: 12px !important;
+}
+
+/* --- 6. Chybové hlášky --- */
+.fapi-form-alert {
+  color: var(--h-error) !important;
+  background-color: rgba(209, 109, 109, 0.1) !important;
+  padding: 15px !important;
+  border: 2px solid var(--h-error) !important;
+  border-radius: var(--h-radius) !important;
+  margin-bottom: 20px !important;
+  font-weight: 700 !important;
+}
+
+/* --- 7. Načítání --- */
+.fapi-sending {
+  color: var(--h-text-secondary) !important;
+  font-style: italic !important;
+  text-align: center !important;
+}
