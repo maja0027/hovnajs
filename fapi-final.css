@@ -591,3 +591,28 @@ html, body { background: #fcf1e1 !important; }
 .fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 {
   top: 0 !important;
 }
+
+/* Mobil: název produktu nezalamovat + dát mu víc místa */
+@media (max-width: 480px) {
+  /* levý sloupec s názvem (místo 50 % -> 65 %) */
+  .fapi-order-form .fapi-form-item > .f-max-w-1\/2 {
+    max-width: 65% !important;
+    flex: 0 0 65% !important;
+  }
+
+  /* pravý sloupec (množství+cena) zbytek */
+  .fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 {
+    max-width: 35% !important;
+    flex: 0 0 35% !important;
+  }
+
+  /* samotný text názvu: 1 řádek, nezalomit */
+  .fapi-order-form .fapi-form-item label span.f-inline {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important; /* pojistka, kdyby byl fakt dlouhý */
+    display: inline-block !important;
+    max-width: 100% !important;
+    vertical-align: middle !important;
+  }
+}
