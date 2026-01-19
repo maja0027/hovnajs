@@ -1,0 +1,129 @@
+/* =========================
+   HOVÍNEK – finální doladění
+   (přidej na KONEC CSS)
+   ========================= */
+
+/* 1) Zrušit orámování/“kartu” celého formuláře */
+#fapi-form-form {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+/* Když je někde wrapper s borderem kolem */
+#fapi-form,
+.fapi-form,
+.fapi-form-wrapper,
+.fapi-form-container,
+.fapi-modal-content,
+.fapi-popup-content {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: #fcf1e1 !important;
+}
+
+/* 2) Položku "Stát" vždy skrýt (typicky select + label) */
+#fapi-form-form .fapi-input-country,
+#fapi-form-form select[name="country"],
+#fapi-form-form select[name="country_id"],
+#fapi-form-form select[name*="country"],
+#fapi-form-form label[for="country"],
+#fapi-form-form label[for="country_id"],
+#fapi-form-form label[for*="country"] {
+  display: none !important;
+}
+
+/* 3) "Vytvořeno v prodejním systému FAPI." zneviditelnit */
+#fapi-form-form .fapi-footer,
+#fapi-form-form .fapi-form-footer,
+#fapi-form-form .fapi-powered-by,
+#fapi-form-form [class*="powered"] {
+  color: #fcf1e1 !important;
+  opacity: 1 !important;          /* držíme text v barvě pozadí */
+}
+
+#fapi-form-form .fapi-footer a,
+#fapi-form-form .fapi-form-footer a,
+#fapi-form-form .fapi-powered-by a {
+  color: #fcf1e1 !important;
+  pointer-events: none !important;
+}
+
+/* 4) Telefon – zrušit „částečné“ orámování (často intl-tel-input) */
+#fapi-form-form .iti,
+#fapi-form-form .iti * {
+  box-shadow: none !important;
+}
+
+#fapi-form-form .iti__selected-flag,
+#fapi-form-form .iti__flag-container,
+#fapi-form-form .iti__country-list {
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  background: transparent !important;
+}
+
+/* ať nevzniká dvojité orámování mezi wrapperem a inputem */
+#fapi-form-form .iti input[type="tel"],
+#fapi-form-form input[type="tel"],
+#fapi-form-form input[name*="phone"] {
+  box-shadow: none !important;
+}
+
+/* 5) Shrnutí objednávky – moderní “card”, bez přehršle orámování */
+#fapi-form-form .fapi-form-prices,
+#fapi-form-form [class*="form-prices"],
+#fapi-form-form [class*="prices"],
+#fapi-form-form [class*="summary"] {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: 0 10px 26px rgba(62, 50, 21, 0.08) !important;
+  background: rgba(255, 255, 255, 0.45) !important;
+  border-radius: 18px !important;
+  padding: 18px !important;
+}
+
+/* tabulky/řádky uvnitř – pryč s default borderama */
+#fapi-form-form .fapi-form-prices table,
+#fapi-form-form .fapi-form-prices tr,
+#fapi-form-form .fapi-form-prices td,
+#fapi-form-form .fapi-form-prices th {
+  border: 0 !important;
+}
+
+#fapi-form-form .fapi-form-prices tr + tr td {
+  border-top: 1px solid rgba(232, 220, 198, 0.8) !important; /* jemný separator */
+}
+
+/* “Celkem k úhradě” – udělat z toho čistý pill bez dashed borderu */
+#fapi-form-form .fapi-form-prices-repayment,
+#fapi-form-form .fapi-form-prices-repayment-with-vat,
+#fapi-form-form [class*="repayment"],
+#fapi-form-form [class*="total"] {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: rgba(101, 104, 57, 0.12) !important;
+  border-radius: 999px !important;
+  padding: 14px 16px !important;
+}
+
+/* 6) CTA text – vyšší kontrast, pořád v hovínkové paletě */
+#fapi-form-form input[type="submit"],
+#fapi-form-form button[type="submit"],
+#fapi-form-form .fapi-submit-button {
+  color: #fffaf2 !important;      /* kontrastní “krémově bílá” */
+  font-weight: 900 !important;
+  letter-spacing: 0.2px !important;
+}
+
+/* když by FAPI přepisovalo barvu textu v buttonu přes span */
+#fapi-form-form .fapi-submit-button *,
+#fapi-form-form button[type="submit"] *,
+#fapi-form-form input[type="submit"] * {
+  color: #fffaf2 !important;
+}
