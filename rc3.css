@@ -296,18 +296,307 @@ html, body { background: #fcf1e1 !important; }
   align-items: center !important;
 }
 
-/* plus/minus */
-.fapi-order-form .f-col-auto.f-min-w-min .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center {
-  width: 28px !important;
-  height: 28px !important;
-  display: grid !important;
-  place-content: center !important;
+/* =========================================================
+   HOVÍNEK – FAPI THEME (v7)
+   Scope: only inside .fapi-order-form
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+html, body { background: #fcf1e1 !important; }
+
+.fapi-order-form {
+  font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  color: #3e3215 !important;
 }
 
-/* input množství */
-.fapi-order-form .f-col-auto.f-min-w-min input.f-form-input.f-w-14.f-h-7 {
+/* Headings */
+.fapi-order-form .fapi-container-header,
+.fapi-order-form .fapi-form-basic-block-title,
+.fapi-order-form .fapi-form-basic-block-title * {
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  color: #3e3215 !important;
+}
+.fapi-order-form .fapi-container-header {
+  background: rgba(255, 249, 239, 0.35) !important;
+  border: 1px solid rgba(232, 220, 198, 0.9) !important;
+  border-radius: 16px !important;
+}
+
+/* Labels */
+.fapi-order-form label {
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  color: #6e5d2f !important;
+}
+
+/* Global inputs – white inside */
+.fapi-order-form input[type="text"],
+.fapi-order-form input[type="email"],
+.fapi-order-form input[type="tel"],
+.fapi-order-form input[type="number"],
+.fapi-order-form input[type="password"],
+.fapi-order-form select,
+.fapi-order-form textarea,
+.fapi-order-form .f-form-input {
+  background-color: #ffffff !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  outline: none !important;
+  color: #3e3215 !important;
+}
+
+.fapi-order-form .f-bg-transparent,
+.fapi-order-form .f-bg-white { background-color: #ffffff !important; }
+
+.fapi-order-form .f-text-gray-700,
+.fapi-order-form .f-text-gray-600,
+.fapi-order-form .f-text-gray-500,
+.fapi-order-form .f-text-gray-400 { color: #3e3215 !important; }
+
+.fapi-order-form input:focus,
+.fapi-order-form select:focus,
+.fapi-order-form textarea:focus,
+.fapi-order-form .f-form-input:focus {
+  border-color: #656839 !important;
+  box-shadow: 0 0 0 4px rgba(101, 104, 57, 0.16) !important;
+}
+
+/* Hide checkboxes (products + “Doručit na jinou adresu”) */
+.fapi-order-form .fapi-form-item input[type="checkbox"],
+.fapi-order-form .fapi-form-default-input-show-shipping-address input[type="checkbox"] {
+  display: none !important;
+}
+.fapi-order-form .fapi-form-item .f-ml-7,
+.fapi-order-form .fapi-form-default-input-show-shipping-address.f-ml-7 {
+  margin-left: 0 !important;
+}
+
+/* Product rows – align middle */
+.fapi-order-form .fapi-form-item {
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  border-radius: 16px !important;
+  padding: 10px 12px !important;
+  align-items: center !important;
+}
+.fapi-order-form .fapi-form-item .f-self-start { align-self: center !important; }
+
+/* remove offsets that push right column down */
+.fapi-order-form .fapi-form-item .f-mt-1,
+.fapi-order-form .fapi-form-item .sm\:f-mt-0 {
+  margin-top: 0 !important;
+}
+
+/* Name / qty / price same sizing */
+.fapi-order-form .fapi-form-item label,
+.fapi-order-form .fapi-form-item label span,
+.fapi-order-form .fapi-form-item span,
+.fapi-order-form .fapi-form-item input[type="number"],
+.fapi-order-form .fapi-form-item-price {
+  font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #3e3215 !important;
+}
+.fapi-order-form .fapi-form-item-price {
+  background: #fff9ef !important;
+  border-radius: 12px !important;
+  padding: 6px 10px !important;
+}
+
+/* ---------------------------------------------------------
+   FIX: perfect vertical centering for + / qty / -
+   - make them same height (28px)
+   - remove tiny negative margins
+--------------------------------------------------------- */
+.fapi-order-form .fapi-form-item .f-flex.f-items-center {
+  align-items: center !important;
+}
+
+.fapi-order-form .fapi-form-item .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center {
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  box-shadow: none !important;
+
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.fapi-order-form .fapi-form-item .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center svg {
+  color: #656839 !important;
+}
+
+.fapi-order-form .fapi-form-item input[type="number"].f-form-input {
   height: 28px !important;
   line-height: 28px !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
+
+/* remove negative pixel nudges coming from checkbox-era layout */
+.fapi-order-form .fapi-form-item .f--mt-0\.5,
+.fapi-order-form .fapi-form-item .f--ml-7,
+.fapi-order-form .fapi-form-item .f--ml-px {
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Doručit na jinou adresu – pill */
+.fapi-order-form .fapi-form-default-input-show-shipping-address {
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  border-radius: 16px !important;
+  padding: 10px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.fapi-order-form .fapi-form-default-input-show-shipping-address label {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Phone – prefix transparent */
+.fapi-order-form .fapi-form-default-input-phone button[type="button"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.fapi-order-form .fapi-form-default-input-phone input[name="phone"],
+.fapi-order-form .fapi-form-default-input-phone .phone-input {
+  background-color: #ffffff !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Country fields – both billing + shipping */
+.fapi-order-form .country-fake-input {
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+}
+
+.fapi-order-form .fapi-form-default-input-country .f-p-px,
+.fapi-order-form .fapi-form-default-input-shipping-country .f-p-px {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.fapi-order-form .fapi-form-default-input-country button[type="button"],
+.fapi-order-form .fapi-form-default-input-shipping-country button[type="button"] {
+  background: #ffffff !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  outline: none !important;
+  width: 100% !important;
+}
+
+/* ---------------------------------------------------------
+   FIX: hide VAT tooltip on hover over price
+   (matches the exact tooltip div classes from your HTML)
+--------------------------------------------------------- */
+.fapi-order-form .fapi-form-item .f-bg-white.f-border.f-mr-28.f--mt-4.f-absolute.f-top-0.f-right-0.f-p-2.f-rounded,
+.fapi-order-form .fapi-form-item .f-bg-white.f-border.f-mr-28.f--mt-4.f-absolute {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Also remove the little arrow square inside tooltip */
+.fapi-order-form .fapi-form-item .f-w-4.f-h-4.f-border-t.f-border-r.f-bg-white.f-absolute {
+  display: none !important;
+}
+
+/* Summary */
+.fapi-order-form .fapi-form-result-container,
+.fapi-order-form .fapi-form-result,
+.fapi-order-form .fapi-form-result-container .f-p-6,
+.fapi-order-form .fapi-form-result-prices-group,
+.fapi-order-form .fapi-form-result-prices,
+.fapi-order-form .fapi-form-result-prices .fapi-form-prices {
+  background: #fcf1e1 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.fapi-order-form .fapi-form-prices-repayment-with-vat-label {
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  color: #6e5d2f !important;
+}
+.fapi-order-form .fapi-form-prices-repayment-with-vat-value {
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 26px !important;
+  color: #656839 !important;
+}
+
+/* Float price */
+.fapi-order-form .fapi-float-price-container {
+  background: #fff9ef !important;
+  border: 2px dashed #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 26px rgba(62, 50, 21, 0.08) !important;
+}
+.fapi-order-form .fapi-float-price-container .fapi-form-prices {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.fapi-order-form .fapi-float-price-container .fapi-form-prices-repayment-with-vat-value {
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  color: #656839 !important;
+}
+
+/* Submit button */
+.fapi-order-form .fapi-submit-button {
+  background: #656839 !important;
+  color: #fffaf2 !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: 0 8px 20px rgba(101, 104, 57, 0.22) !important;
+  border-radius: 18px !important;
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 900 !important;
+}
+.fapi-order-form .fapi-submit-button:focus,
+.fapi-order-form .fapi-submit-button:focus-visible {
+  outline: none !important;
+  box-shadow: 0 10px 26px rgba(101, 104, 57, 0.26) !important;
+}
+
+/* Hide FAPI footer */
+.fapi-order-form > p.f-mt-4.f-text-center.f-text-xs.f-text-gray-400 {
+  display: none !important;
+}
+
+/* === FIX: middle align pro + / qty / - přesně v tomhle wrapperu === */
+
+/* wrapper s f-mt-1 posouvá celý řádek dolů -> zrušit */
+.fapi-order-form .f-col-auto.f-min-w-min.f-mt-1,
+.fapi-order-form .f-col-auto.f-min-w-min.sm\:f-mt-0 {
+  margin-top: 0 !important;
+}
+
+/* samotný flex wrapper */
+.fapi-order-form .f-col-auto.f-min-w-min .f-flex.f-items-center {
+  align-items: center !important;
+}
+
+/* Mikro-dorovnání ikon v +/- (o chlup dolů) */
+.fapi-order-form .f-col-auto.f-min-w-min
+  .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center svg {
+  transform: translateY(1px) !important;
+}
+
