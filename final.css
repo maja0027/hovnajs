@@ -581,40 +581,9 @@ html, body { background: #fcf1e1 !important; }
   display: none !important;
 }
 
-/* === FIX: middle align pro + / qty / - přesně v tomhle wrapperu === */
-
-/* wrapper s f-mt-1 posouvá celý řádek dolů -> zrušit */
-.fapi-order-form .f-col-auto.f-min-w-min.f-mt-1,
-.fapi-order-form .f-col-auto.f-min-w-min.sm\:f-mt-0 {
-  margin-top: 0 !important;
-}
-
-/* samotný flex wrapper */
-.fapi-order-form .f-col-auto.f-min-w-min .f-flex.f-items-center {
-  align-items: center !important;
-}
-
-/* Mikro-dorovnání ikon v +/- (o chlup dolů) */
-.fapi-order-form .f-col-auto.f-min-w-min
-  .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center svg {
-  transform: translateY(1px) !important;
-}
-
-/* === POSUN DOLŮ: celý blok s množstvím (+/input/-) a cenou uvnitř řádku produktu === */
-
-/* pravý sloupec v produktovém řádku (obsahuje qty + price) */
+/* větší posun dolů pro pravý blok (množství + cena) */
 .fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 {
   position: relative !important;
-  top: 2px !important; /* uprav na 1px/3px podle oka */
-}
-
-/* aby se už nevracel zpět přes f-self-start */
-.fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 {
+  top: 5px !important;  /* bylo 2px */
   align-self: center !important;
-}
-
-/* volitelně: zrušit vnitřní margin-top, který to rozhodí */
-.fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 .f-mt-1,
-.fapi-order-form .fapi-form-item > .f-flex.f-pl-1.f-max-w-1\/2 .sm\:f-mt-0 {
-  margin-top: 0 !important;
 }
