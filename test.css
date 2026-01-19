@@ -1,0 +1,200 @@
+/* =========================================================
+   FAPI Custom CSS (drop-in) — replace whole file with this
+   ========================================================= */
+
+/* --- SMOKE TEST (dočasně nech zapnuté pro ověření) --- */
+#fapi-form-form { outline: 6px solid magenta !important; }
+/* ------------------------------------------------------ */
+
+/* Základní theme (uprav si barvy/fonty dle potřeby) */
+#fapi-form-form{
+  --ff-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  --ff-bg: #ffffff;
+  --ff-surface: #ffffff;
+  --ff-text: #111827;
+  --ff-muted: #6b7280;
+  --ff-border: rgba(17, 24, 39, 0.14);
+  --ff-primary: #166534;              /* tmavší zelená */
+  --ff-primary-2: #16a34a;            /* světlejší zelená */
+  --ff-danger: #b91c1c;
+  --ff-radius: 16px;
+  --ff-shadow: 0 14px 40px rgba(0,0,0,.12);
+  --ff-focus: 0 0 0 4px rgba(22,163,74,.22);
+
+  font-family: var(--ff-font) !important;
+  color: var(--ff-text) !important;
+  line-height: 1.45 !important;
+
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  padding: 22px !important;
+
+  background: var(--ff-bg) !important;
+  border: 1px solid var(--ff-border) !important;
+  border-radius: var(--ff-radius) !important;
+  box-shadow: var(--ff-shadow) !important;
+}
+
+#fapi-form-form, #fapi-form-form *{ box-sizing: border-box !important; }
+
+/* Nadpisy bloků / sekcí */
+#fapi-form-form .fapi-form-basic-block-title{
+  font-weight: 750 !important;
+  font-size: 18px !important;
+  margin: 0 0 12px 0 !important;
+}
+
+/* Bloky */
+#fapi-form-form .fapi-form-basic-block{
+  margin-bottom: 18px !important;
+  padding: 14px !important;
+  border: 1px solid rgba(17, 24, 39, 0.08) !important;
+  border-radius: 14px !important;
+  background: var(--ff-surface) !important;
+}
+
+/* Labely */
+#fapi-form-form label{
+  display: block !important;
+  font-weight: 650 !important;
+  margin: 10px 0 6px !important;
+  color: var(--ff-text) !important;
+}
+
+/* Texty / drobné popisky */
+#fapi-form-form .fapi-form-note,
+#fapi-form-form .fapi-form-help,
+#fapi-form-form small{
+  color: var(--ff-muted) !important;
+}
+
+/* Inputy (bez checkbox/radio) */
+#fapi-form-form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+#fapi-form-form select,
+#fapi-form-form textarea,
+#fapi-form-form .fapi-input,
+#fapi-form-form .fapi-input-email,
+#fapi-form-form .fapi-input-phone,
+#fapi-form-form .fapi-input-company,
+#fapi-form-form .fapi-input-ico,
+#fapi-form-form .fapi-input-dic,
+#fapi-form-form .fapi-input-icdph,
+#fapi-form-form .fapi-input-first_name,
+#fapi-form-form .fapi-input-last_name,
+#fapi-form-form .fapi-input-street,
+#fapi-form-form .fapi-input-city,
+#fapi-form-form .fapi-input-zip,
+#fapi-form-form .fapi-input-country,
+#fapi-form-form .fapi-input-notes{
+  width: 100% !important;
+  padding: 12px 12px !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--ff-border) !important;
+  background: #ffffff !important;
+  color: var(--ff-text) !important;
+  outline: none !important;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease !important;
+}
+
+#fapi-form-form textarea{ min-height: 90px !important; resize: vertical !important; }
+
+#fapi-form-form input:not([type="checkbox"]):not([type="radio"]):focus,
+#fapi-form-form select:focus,
+#fapi-form-form textarea:focus{
+  border-color: rgba(22,163,74,.55) !important;
+  box-shadow: var(--ff-focus) !important;
+}
+
+/* Checkbox/Radio – moderní barva */
+#fapi-form-form input[type="checkbox"],
+#fapi-form-form input[type="radio"]{
+  accent-color: var(--ff-primary-2) !important;
+}
+
+/* Skupiny produktů */
+#fapi-form-form .fapi-form-item-group,
+#fapi-form-form .fapi-form-item-group-0,
+#fapi-form-form .fapi-form-item-group-1,
+#fapi-form-form .fapi-form-item-group-2{
+  margin: 12px 0 !important;
+  padding: 12px !important;
+  border: 1px solid rgba(17, 24, 39, 0.10) !important;
+  border-radius: 14px !important;
+  background: rgba(22,163,74,0.04) !important;
+}
+
+/* Ceny / rekapitulace */
+#fapi-form-form .fapi-form-prices{
+  margin-top: 12px !important;
+  padding: 14px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(17, 24, 39, 0.10) !important;
+  background: rgba(0,0,0,0.03) !important;
+}
+
+#fapi-form-form .fapi-form-prices-discount{
+  color: var(--ff-danger) !important;
+  font-weight: 750 !important;
+}
+
+#fapi-form-form .fapi-form-prices-repayment-with-vat{
+  font-size: 24px !important;
+  font-weight: 850 !important;
+  color: var(--ff-text) !important;
+}
+
+/* Chyby / alerty */
+#fapi-form-form .fapi-form-alert{
+  color: var(--ff-danger) !important;
+  background: rgba(185, 28, 28, 0.08) !important;
+  border: 1px solid rgba(185, 28, 28, 0.30) !important;
+  padding: 12px !important;
+  border-radius: 14px !important;
+  margin: 12px 0 16px !important;
+}
+
+/* Tlačítko Odeslat/Objednat */
+#fapi-form-form .fapi-submit-button,
+#fapi-form-form button[type="submit"],
+#fapi-form-form input[type="submit"]{
+  width: 100% !important;
+  margin-top: 14px !important;
+  padding: 14px 16px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+
+  background: linear-gradient(180deg, var(--ff-primary-2), var(--ff-primary)) !important;
+  color: #ffffff !important;
+  font-weight: 850 !important;
+  font-size: 16px !important;
+  letter-spacing: .2px !important;
+
+  box-shadow: 0 10px 22px rgba(22,163,74,.22) !important;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease !important;
+}
+
+#fapi-form-form .fapi-submit-button:hover,
+#fapi-form-form button[type="submit"]:hover,
+#fapi-form-form input[type="submit"]:hover{
+  transform: translateY(-1px) !important;
+  filter: brightness(1.02) !important;
+  box-shadow: 0 14px 28px rgba(22,163,74,.28) !important;
+}
+
+/* Tlačítko “zobrazit splátky” */
+#fapi-form-form .fapi-form-prices-repayment-list-button{
+  border: 1px solid rgba(17,24,39,.12) !important;
+  background: #ffffff !important;
+  color: var(--ff-text) !important;
+  border-radius: 999px !important;
+  padding: 10px 14px !important;
+  cursor: pointer !important;
+}
+
+/* Miniupsell obrázek (pokud používáš) */
+#fapi-form-form .fapi-item-image{
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+}
