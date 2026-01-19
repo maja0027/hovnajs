@@ -1,0 +1,192 @@
+/* 
+   HOVÍNEK - FAPI Custom CSS Theme
+   URL pro FAPI: https://www.hovinek.cz/fapi-theme.css
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --h-bg-paper: #fcf1e1;
+  --h-border: #e8dcc6;
+  --h-text-main: #3e3215;
+  --h-text-secondary: #6e5d2f;
+  --h-green: #656839;
+  --h-green-hover: #4a4d2a;
+  --h-white: #ffffff;
+  --h-radius: 16px;
+  --h-pink: #d67c9c;
+}
+
+/* --- Hlavní kontejner --- */
+/* FAPI obaluje formulář do divu s třídou .fapi-form */
+.fapi-form {
+  font-family: 'Nunito', sans-serif !important;
+  color: var(--h-text-main) !important;
+  background-color: transparent !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* --- Nadpisy --- */
+.fapi-form h1, 
+.fapi-form h2, 
+.fapi-form h3,
+.fapi-form .fapi-heading,
+.fapi-element-heading {
+  font-family: 'Baloo 2', cursive !important;
+  color: var(--h-text-main) !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* --- Popisky polí (Labels) --- */
+.fapi-form label,
+.fapi-label {
+  font-family: 'Baloo 2', cursive !important;
+  color: var(--h-text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+/* --- Vstupní pole (Inputs) --- */
+.fapi-form input[type="text"],
+.fapi-form input[type="email"],
+.fapi-form input[type="tel"],
+.fapi-form input[type="number"],
+.fapi-form input[type="password"],
+.fapi-form select,
+.fapi-form textarea,
+.fapi-input {
+  background-color: var(--h-white) !important;
+  border: 2px solid var(--h-border) !important;
+  border-radius: var(--h-radius) !important;
+  padding: 12px 16px !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--h-text-main) !important;
+  box-shadow: 0 2px 4px rgba(62, 50, 21, 0.03) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  outline: none !important;
+}
+
+/* Focus stav pro inputy */
+.fapi-form input:focus,
+.fapi-form select:focus,
+.fapi-form textarea:focus,
+.fapi-input:focus {
+  border-color: var(--h-green) !important;
+  box-shadow: 0 0 0 4px rgba(101, 104, 57, 0.15) !important;
+}
+
+/* Placeholder */
+.fapi-form ::placeholder {
+  color: #b0a695 !important;
+  font-weight: 500 !important;
+}
+
+/* --- Tlačítko (Submit) --- */
+.fapi-form .fapi-button,
+.fapi-form button[type="submit"],
+.fapi-form input[type="submit"],
+.btn-primary {
+  background-color: var(--h-green) !important;
+  background-image: none !important; /* Odstranění defaultních gradientů */
+  color: #faedd9 !important;
+  font-family: 'Baloo 2', cursive !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  padding: 16px 32px !important;
+  border-radius: var(--h-radius) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+  box-shadow: 0 4px 10px rgba(101, 104, 57, 0.2) !important;
+  text-transform: none !important;
+  margin-top: 10px !important;
+  display: block !important;
+}
+
+.fapi-form .fapi-button:hover,
+.fapi-form button[type="submit"]:hover,
+.fapi-form input[type="submit"]:hover {
+  background-color: var(--h-green-hover) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(101, 104, 57, 0.3) !important;
+}
+
+/* --- Rekapitulace objednávky (Tabulka) --- */
+.fapi-summary,
+.fapi-order-summary,
+.order-summary {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border: 2px dashed var(--h-border) !important;
+  border-radius: var(--h-radius) !important;
+  padding: 20px !important;
+  margin-bottom: 25px !important;
+}
+
+/* Položky v košíku */
+.fapi-summary-item,
+.fapi-product-row {
+  border-bottom: 1px solid rgba(232, 220, 198, 0.5) !important;
+  padding: 10px 0 !important;
+}
+
+.fapi-summary-item-name,
+.product-name {
+  font-family: 'Baloo 2', cursive !important;
+  font-weight: 700 !important;
+  color: var(--h-text-main) !important;
+}
+
+.fapi-summary-item-price,
+.product-price,
+.fapi-total-price {
+  font-weight: 800 !important;
+  color: var(--h-green) !important;
+}
+
+/* --- Checkboxy a Radio buttony --- */
+.fapi-form input[type="checkbox"],
+.fapi-form input[type="radio"] {
+  accent-color: var(--h-green) !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin-right: 8px !important;
+  cursor: pointer !important;
+  border: 2px solid var(--h-border) !important;
+}
+
+/* --- Chybové hlášky --- */
+.fapi-error,
+.error-message,
+.help-block.error {
+  color: #d16d6d !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  margin-top: 5px !important;
+}
+
+/* --- Doprava a platba (pokud jsou ve formě boxů) --- */
+.fapi-shipping-option,
+.fapi-payment-option {
+  border: 2px solid var(--h-border) !important;
+  border-radius: var(--h-radius) !important;
+  background: var(--h-white) !important;
+  padding: 10px !important;
+  margin-bottom: 8px !important;
+  transition: all 0.2s !important;
+}
+
+.fapi-shipping-option:hover,
+.fapi-payment-option:hover,
+.fapi-shipping-option.selected,
+.fapi-payment-option.selected {
+  border-color: var(--h-green) !important;
+  background-color: rgba(101, 104, 57, 0.05) !important;
+}
