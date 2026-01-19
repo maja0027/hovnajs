@@ -1,0 +1,136 @@
+/* === PATCH: dolep na konec === */
+
+/* 1) Zruš orámování / stín kolem celého formuláře */
+#fapi-form-form {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important; /* samotný "obal" pryč */
+  border-radius: 0 !important;
+  padding: 10px 0 !important;
+}
+
+/* 2) Skryj pole "Stát" (label + select + typické wrappery) */
+label[for*="country"],
+label[for*="state"],
+select[name*="country"],
+select[name*="state"],
+.fapi-input-country,
+.fapi-input-state,
+.fapi-field-country,
+.fapi-field-state,
+.fapi-row-country,
+.fapi-row-state,
+[class*="country"],
+[class*="state"] {
+  display: none !important;
+}
+
+/* 3) Skryj "Vytvořeno v prodejním systému FAPI." (neviditelné) */
+#fapi-form-form .fapi-footer,
+#fapi-form-form .fapi-form-footer,
+#fapi-form-form .footer,
+#fapi-form-form small,
+#fapi-form-form p {
+  /* nechceme zneviditelnit vše – proto ještě níže cílíme konkrétnější text */
+}
+
+/* konkrétněji: elementy, které často obsahují tento text */
+#fapi-form-form [class*="created"],
+#fapi-form-form [class*="powered"],
+#fapi-form-form [class*="fapi-powered"],
+#fapi-form-form .fapi-created,
+#fapi-form-form .fapi-powered-by {
+  color: #fcf1e1 !important;
+}
+
+/* “nukleární” varianta jen na patičku formuláře */
+#fapi-form-form .fapi-form-footer,
+#fapi-form-form .fapi-footer {
+  color: #fcf1e1 !important;
+  opacity: 1 !important;
+}
+
+/* 4) Telefon – zruš zbylé orámování kolem prefixu (+420) / wrapperu */
+#fapi-form-form .fapi-input-phone,
+#fapi-form-form input[type="tel"],
+#fapi-form-form .iti,
+#fapi-form-form .iti__flag-container,
+#fapi-form-form .iti__selected-flag,
+#fapi-form-form .iti__country-list {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* ale samotné tel pole chceme mít stejné jako ostatní inputy */
+#fapi-form-form input[type="tel"] {
+  background: #fff9ef !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 2px 6px rgba(62, 50, 21, 0.04) !important;
+}
+
+/* wrapper kolem prefixu (často má vlastní border) */
+#fapi-form-form .iti__selected-flag {
+  background: transparent !important;
+  border-right: 1px solid rgba(232,220,198,0.9) !important; /* jemný oddělovač, ne rámeček */
+  border-radius: 12px 0 0 12px !important;
+}
+
+/* 5) Shrnutí objednávky – odstraň ty "dashed" rámečky a udělej čistý box */
+#fapi-form-form .fapi-form-prices,
+#fapi-form-form .fapi-form-summary,
+#fapi-form-form .fapi-summary,
+#fapi-form-form [class*="summary"],
+#fapi-form-form [class*="prices"] {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* cíleně na ten velký “rámečkový” blok */
+#fapi-form-form .fapi-form-prices {
+  background: rgba(255, 255, 255, 0.55) !important;
+  border: 1px solid rgba(232,220,198,0.95) !important;
+  border-radius: 18px !important;
+  padding: 18px !important;
+}
+
+/* odstraň vnitřní dashed rámečky, které tam FAPI skládá */
+#fapi-form-form .fapi-form-prices *,
+#fapi-form-form [class*="summary"] *,
+#fapi-form-form [class*="prices"] * {
+  border-style: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* total část: moderní “pill” bez tečkování */
+#fapi-form-form .fapi-form-prices-repayment-with-vat,
+#fapi-form-form [class*="repayment"],
+#fapi-form-form [class*="total"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
+  padding: 12px 16px !important;
+  background: rgba(101, 104, 57, 0.10) !important;
+  border: 1px solid rgba(101, 104, 57, 0.22) !important;
+  border-radius: 16px !important;
+  color: #656839 !important;
+  font-weight: 900 !important;
+}
+
+/* 6) CTA text kontrastněji, ale pořád hovínkově */
+.fapi-submit-button,
+input[type="submit"],
+button[type="submit"] {
+  color: #faedd9 !important; /* krémová = čitelná na olivové */
+  text-shadow: 0 1px 0 rgba(0,0,0,0.12) !important;
+}
+
+/* 7) Kdyby někde zůstávaly rámovací čáry v layoutu */
+#fapi-form-form hr,
+#fapi-form-form fieldset {
+  border: none !important;
+}
