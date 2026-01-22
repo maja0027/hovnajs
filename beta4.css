@@ -283,122 +283,8 @@ html, body { background: #fcf1e1 !important; }
   display: none !important;
 }
 
-/* =========================================================
-   PATCH v9 – Speciální nabídka + Slevový kód (Uplatnit)
-   VLOŽ NA ÚPLNÝ KONEC SOUBORU
-   ========================================================= */
-
-
 /* =======================
-   1) SPECIÁLNÍ NABÍDKA
-   ======================= */
-
-/* header už máš OK, jen pro jistotu */
-.fapi-order-form .fapi-container-header.order-bump{
-  background: rgba(255, 249, 239, 0.35) !important;
-  border: 1px solid rgba(232, 220, 198, 0.9) !important;
-  border-radius: 16px !important;
-}
-
-/* hlavní box nabídky – modernější + papírový look + zvýraznění */
-.fapi-order-form .order-bump-label{
-  position: relative !important;
-  overflow: hidden !important;
-
-  /* “papír” + jemný pattern přímo v backgroundu (nepřekryje border) */
-  background-color: #fff9ef !important;
-  background-image:
-    repeating-linear-gradient(
-      135deg,
-      rgba(232,220,198,0.18) 0 10px,
-      rgba(255,249,239,0.00) 10px 22px
-    ),
-    linear-gradient(180deg, rgba(255,249,239,0.98), rgba(255,249,239,0.88)) !important;
-  background-blend-mode: multiply, normal !important;
-
-  /* místo dashed: čistější moderní rámeček + jemný glow */
-  border: 2px solid rgba(232, 220, 198, 0.98) !important;
-  border-radius: 18px !important;
-  box-shadow:
-    0 10px 26px rgba(62, 50, 21, 0.06),
-    0 0 0 4px rgba(101, 104, 57, 0.06) !important;
-
-  padding: 14px 14px 14px 16px !important;
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 12px !important;
-}
-
-/* zelená “stužka” – ale uvnitř borderu (ať se už nic “neláme”) */
-.fapi-order-form .order-bump-label::before{
-  content: "" !important;
-  position: absolute !important;
-  left: 2px !important;
-  top: 2px !important;
-  bottom: 2px !important;
-  width: 10px !important;
-  border-radius: 16px 0 0 16px !important;
-  background: linear-gradient(180deg, rgba(101,104,57,0.95), rgba(101,104,57,0.55)) !important;
-  pointer-events: none !important;
-}
-
-/* badge vpravo nahoře */
-.fapi-order-form .order-bump-label::after{
-  content: "Doporučujeme" !important;
-  position: absolute !important;
-  top: 10px !important;
-  right: 12px !important;
-  padding: 6px 10px !important;
-  border-radius: 999px !important;
-  background: rgba(101, 104, 57, 0.10) !important;
-  border: 1px solid rgba(101, 104, 57, 0.22) !important;
-  color: #4a4d2a !important;
-  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
-  font-weight: 900 !important;
-  font-size: 13px !important;
-  letter-spacing: 0.2px !important;
-  pointer-events: none !important;
-}
-
-/* obsah nad pseudo prvky */
-.fapi-order-form .order-bump-label > *{
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-/* odstranit šipku */
-.fapi-order-form svg.order-bump-arrow{
-  display: none !important;
-}
-
-/* checkbox v nabídce – posunout, aby nebyl na stužce */
-.fapi-order-form .order-bump-label > input[type="checkbox"]{
-  float: none !important;
-  margin: 2px 0 0 14px !important;
-  accent-color: #656839 !important;
-}
-
-/* zrušit vnitřní “hack” marginy */
-.fapi-order-form .order-bump-label .f--mt-1{ margin-top: 0 !important; }
-.fapi-order-form .order-bump-label .f-ml-2{ margin-left: 0 !important; }
-
-/* text nabídky */
-.fapi-order-form .order-bump-label p{
-  margin: 0 !important;
-  color: #3e3215 !important;
-  font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
-  font-size: 16px !important;
-  font-weight: 800 !important;
-  line-height: 1.35 !important;
-}
-.fapi-order-form .order-bump-label strong{
-  font-weight: 900 !important;
-  color: #3e3215 !important;
-}
-
-
-/* =======================
-   2) SLEVOVÝ KÓD
+   SLEVOVÝ KÓD
    ======================= */
 
 /* řádek “Mám slevový kód” */
@@ -474,4 +360,123 @@ html, body { background: #fcf1e1 !important; }
 .fapi-order-form .fapi-form-result-discount-code .f-text-red-500{
   color: #d16d6d !important;
   font-weight: 700 !important;
+}
+
+/* =======================
+   SPECIÁLNÍ NABÍDKA (order bump) – v10
+   ======================= */
+
+/* Box nabídky */
+.fapi-order-form .order-bump-label{
+  position: relative !important;
+  overflow: hidden !important;
+
+  background-color: #fff9ef !important;
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(232,220,198,0.16) 0 10px,
+      rgba(255,249,239,0.00) 10px 22px
+    ),
+    linear-gradient(180deg, rgba(255,249,239,0.98), rgba(255,249,239,0.90)) !important;
+
+  border: 2px solid rgba(232, 220, 198, 0.98) !important;
+  border-radius: 18px !important;
+  box-shadow:
+    0 10px 26px rgba(62, 50, 21, 0.06),
+    0 0 0 4px rgba(101, 104, 57, 0.06) !important;
+
+  /* víc prostoru nahoře kvůli badge */
+  padding: 16px 16px 16px 16px !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+/* zelená stužka – od úplného začátku boxu */
+.fapi-order-form .order-bump-label::before{
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 12px !important;
+  border-radius: 18px 0 0 18px !important;
+  background: linear-gradient(180deg, rgba(101,104,57,0.95), rgba(101,104,57,0.55)) !important;
+  pointer-events: none !important;
+}
+
+/* zrušit starý absolutní badge (pokud tam zůstal) */
+.fapi-order-form .order-bump-label::after{
+  content: none !important;
+}
+
+/* šipku pryč */
+.fapi-order-form svg.order-bump-arrow{
+  display: none !important;
+}
+
+/* checkbox – ať nesedí na stužce */
+.fapi-order-form .order-bump-label > input[type="checkbox"]{
+  float: none !important;
+  margin: 2px 0 0 14px !important;
+  accent-color: #656839 !important;
+}
+
+/* wrapper kolem labelu – uděláme z něj “hlavičku + text” */
+.fapi-order-form .order-bump-label .f--mt-1.f-ml-2{
+  margin: 0 !important;
+  width: 100% !important;
+  padding-right: 0 !important;
+}
+
+/* label uvnitř – flex, aby badge bylo vpravo a text se nebil */
+.fapi-order-form .order-bump-label label{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
+/* Vložíme badge před text pomocí pseudo prvku na span/p */
+.fapi-order-form .order-bump-label label span{
+  display: block !important;
+  position: relative !important;
+}
+
+/* “badge” jako normální prvek v layoutu – už nic nepřekrývá */
+.fapi-order-form .order-bump-label label span::before{
+  content: "Doporučujeme ⭐" !important;
+  display: inline-block !important;
+  align-self: flex-end !important;
+
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  background: rgba(101, 104, 57, 0.10) !important;
+  border: 1px solid rgba(101, 104, 57, 0.22) !important;
+
+  color: #4a4d2a !important;
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.2px !important;
+
+  /* zarovnání doprava */
+  float: right !important;
+  margin: 0 0 6px 0 !important;
+}
+
+/* text nabídky */
+.fapi-order-form .order-bump-label p{
+  margin: 0 !important;
+  color: #3e3215 !important;
+  font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+}
+.fapi-order-form .order-bump-label strong{
+  font-weight: 900 !important;
+  color: #3e3215 !important;
 }
