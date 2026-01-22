@@ -630,46 +630,69 @@ html, body { background: var(--h-bg) !important; }
 }
 
 /* =========================================================
-   18) RESPONSIVE (mobil – iPhone 16 Pro Max)
+   MOBIL (iPhone) – hezčí rozložení řádku produktu
+   - cena nahoře, množství pod ní (vpravo)
+   - název má víc místa => neláme se na "HOVÍNEK" + ...
    ========================================================= */
 
 @media (max-width: 520px){
 
-  /* Produktový řádek – držet vše uvnitř, bez “…” */
+  /* řádek: nechceme tlačit vše do jedné vodorovné řady */
   .fapi-order-form .fapi-form-item{
-    flex-wrap: nowrap !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     gap: 10px !important;
   }
 
-  /* Levá část (název) – dovolíme 2 řádky, žádné ellipsis */
+  /* levý blok (název) – dostane maximum prostoru */
   .fapi-order-form .fapi-form-item > .f-max-w-1\/2{
     flex: 1 1 auto !important;
     max-width: none !important;
     min-width: 0 !important;
   }
 
-  .fapi-order-form .fapi-form-item label span.f-inline{
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
-    text-overflow: clip !important; /* žádné “…”, jen čisté oříznutí po 2 řádcích */
-    line-height: 1.25 !important;
-  }
-
-  /* Pravá část (množství + cena) – vždy uvnitř řádku */
+  /* pravý blok (cena + množství) – sloupec vpravo */
   .fapi-order-form .fapi-form-item > .f-flex.f-flex-col-reverse{
     flex: 0 0 auto !important;
+    min-width: max-content !important;
+
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+
     white-space: nowrap !important;
-    gap: 10px !important;
   }
 
-  /* Cena na mobilu o chlup menší, aby se vešla */
-  .fapi-order-form .fapi-form-item .fapi-form-item-price{
-    font-size: 15px !important;
+  /* uvnitř pravého bloku: cena první, množství druhé */
+  .fapi-order-form .fapi-form-item .f-col-auto.f-text-right.f-relative{
+    order: 1 !important;
   }
-  .fapi-order-form .fapi-form-item .fapi-form-discounted-price.fapi-form-item-price{
-    font-size: 16px !important;
+  .fapi-order-form .fapi-form-item .f-col-auto.f-min-w-min{
+    order: 2 !important;
+  }
+
+  /* název produktu: žádné "..." – normálně se zalomí, max 2 řádky */
+  .fapi-order-form .fapi-form-item label span.f-inline{
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important; /* když chceš 3 řádky, dej 3 */
+    overflow: hidden !important;
+
+    font-size: 15px !important;       /* trochu menší = víc se vejde */
+    line-height: 1.2 !important;
+    text-overflow: clip !important;
+  }
+
+  /* množství: ať je opticky uprostřed “pilulky” */
+  .fapi-order-form .fapi-form-item input[type="number"].f-form-input{
+    height: 30px !important;
+    line-height: 30px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* sleva: zmenšíme rozestupy, aby to bylo kompaktní */
+  .fapi-order-form .fapi-form-item .f-col-auto.f-text-right.f-relative{
+    gap: 4px !important;
   }
 }
