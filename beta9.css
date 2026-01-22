@@ -1,0 +1,650 @@
+/* =========================================================
+   HOVÍNEK – FAPI THEME (v10)
+   Platí pouze uvnitř .fapi-order-form
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* =========================================================
+   ZÁKLAD STRÁNKY (pozadí + písmo)
+   ========================================================= */
+
+html, body { background: #fcf1e1 !important; }
+
+.fapi-order-form{
+  font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  color: #3e3215 !important;
+}
+
+/* =========================================================
+   NADPISY BLOKŮ (Položky a ceny, Fakturační údaje, Shrnutí...)
+   ========================================================= */
+
+.fapi-order-form .fapi-container-header,
+.fapi-order-form .fapi-form-basic-block-title,
+.fapi-order-form .fapi-form-basic-block-title *{
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  color: #3e3215 !important;
+}
+
+.fapi-order-form .fapi-container-header{
+  background: rgba(255, 249, 239, 0.35) !important;
+  border: 1px solid rgba(232, 220, 198, 0.9) !important;
+  border-radius: 16px !important;
+}
+
+/* =========================================================
+   LABELY (popisky polí)
+   ========================================================= */
+
+.fapi-order-form label{
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  color: #6e5d2f !important;
+}
+
+/* =========================================================
+   INPUTY (jednotný vzhled – uvnitř bílé)
+   ========================================================= */
+
+.fapi-order-form input[type="text"],
+.fapi-order-form input[type="email"],
+.fapi-order-form input[type="tel"],
+.fapi-order-form input[type="number"],
+.fapi-order-form input[type="password"],
+.fapi-order-form select,
+.fapi-order-form textarea,
+.fapi-order-form .f-form-input{
+  background-color: #ffffff !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  outline: none !important;
+  color: #3e3215 !important;
+}
+
+/* iOS: vycentrování čísla v inputu */
+.fapi-order-form input[type="number"]{
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+.fapi-order-form input[type="number"]::-webkit-outer-spin-button,
+.fapi-order-form input[type="number"]::-webkit-inner-spin-button{
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+.fapi-order-form .f-bg-transparent,
+.fapi-order-form .f-bg-white{ background-color: #ffffff !important; }
+
+.fapi-order-form .f-text-gray-700,
+.fapi-order-form .f-text-gray-600,
+.fapi-order-form .f-text-gray-500,
+.fapi-order-form .f-text-gray-400{ color: #3e3215 !important; }
+
+.fapi-order-form input:focus,
+.fapi-order-form select:focus,
+.fapi-order-form textarea:focus,
+.fapi-order-form .f-form-input:focus{
+  border-color: #656839 !important;
+  box-shadow: 0 0 0 4px rgba(101, 104, 57, 0.16) !important;
+}
+
+/* =========================================================
+   CHECKBOXY
+   - produkty: skrýt
+   - “Doručit na jinou adresu”: NEskrývat (uživatel chce vidět)
+   ========================================================= */
+
+.fapi-order-form .fapi-form-item input[type="checkbox"]{
+  display: none !important;
+}
+
+/* =========================================================
+   PRODUKTY – stabilní layout (grid: název | ovládání+cena)
+   ========================================================= */
+
+.fapi-order-form .fapi-form-item{
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  border-radius: 16px !important;
+  padding: 12px 14px !important;
+
+  /* stabilní rozložení i na mobilu */
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  column-gap: 12px !important;
+  align-items: center !important;
+}
+
+/* levý blok (název) – zrušit 50% omezení */
+.fapi-order-form .fapi-form-item > .f-max-w-1\/2{
+  max-width: none !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* odstranění “odsazení” názvu (label mívá f-ml-2) */
+.fapi-order-form .fapi-form-item label.f-ml-2{
+  margin-left: 0 !important;
+}
+
+/* název produktu – nezkracovat třemi tečkami */
+.fapi-order-form .fapi-form-item label span.f-inline{
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  display: inline !important;
+  line-height: 1.25 !important;
+}
+
+/* pravý blok (množství + cena) – vynutit vedle sebe i na mobilu */
+.fapi-order-form .fapi-form-item > .f-flex.f-flex-col-reverse{
+  max-width: none !important;
+  width: auto !important;
+  align-self: center !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+
+  white-space: nowrap !important;
+}
+
+/* zrušit posuny/mikromargins z původního layoutu */
+.fapi-order-form .fapi-form-item .f-mt-1,
+.fapi-order-form .fapi-form-item .sm\:f-mt-0,
+.fapi-order-form .fapi-form-item .f--mt-0\.5,
+.fapi-order-form .fapi-form-item .f--ml-7,
+.fapi-order-form .fapi-form-item .f--ml-px{
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* jednotná typografie v řádku produktu */
+.fapi-order-form .fapi-form-item label,
+.fapi-order-form .fapi-form-item label span,
+.fapi-order-form .fapi-form-item span,
+.fapi-order-form .fapi-form-item input[type="number"],
+.fapi-order-form .fapi-form-item-price{
+  font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: #3e3215 !important;
+}
+
+/* =========================================================
+   MNOŽSTVÍ (+ / input / -) – perfektní vertikální centrování
+   ========================================================= */
+
+.fapi-order-form .fapi-form-item .f-flex.f-items-center{
+  align-items: center !important;
+}
+
+/* tlačítka + / - */
+.fapi-order-form .fapi-form-item .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center{
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  box-shadow: none !important;
+  width: 28px !important;
+  height: 28px !important;
+}
+.fapi-order-form .fapi-form-item .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center svg{
+  color: #656839 !important;
+}
+
+/* input množství */
+.fapi-order-form .fapi-form-item input[type="number"].f-form-input{
+  width: 56px !important;
+  height: 28px !important;
+  line-height: 28px !important;
+  padding: 0 !important;
+  text-align: center !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+/* =========================================================
+   CENA – hezký vzhled + slevy (přeškrtnutá + nová)
+   ========================================================= */
+
+.fapi-order-form .fapi-form-item .f-col-auto.f-text-right.f-relative{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  gap: 2px !important;
+}
+
+/* běžná cena jako pilulka */
+.fapi-order-form .fapi-form-item-price{
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  border-radius: 12px !important;
+  padding: 6px 10px !important;
+}
+
+/* přeškrtnutá původní cena */
+.fapi-order-form .f-line-through.fapi-form-item-price{
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  opacity: 0.55 !important;
+  line-height: 1.1 !important;
+  text-decoration: line-through !important;
+}
+
+/* zlevněná cena */
+.fapi-order-form .fapi-form-discounted-price.fapi-form-item-price{
+  background: rgba(255, 249, 239, 0.6) !important;
+  border: 1px solid rgba(209, 109, 109, 0.35) !important;
+  color: #c65f5f !important;
+  font-weight: 900 !important;
+}
+
+/* =========================================================
+   VYPÍNÁME TOOLTIP “Bez DPH / Včetně DPH” při hoveru na cenu
+   ========================================================= */
+
+.fapi-order-form .fapi-form-item .f-bg-white.f-border.f-mr-28.f--mt-4.f-absolute.f-top-0.f-right-0.f-p-2.f-rounded,
+.fapi-order-form .fapi-form-item .f-bg-white.f-border.f-mr-28.f--mt-4.f-absolute{
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+.fapi-order-form .fapi-form-item .f-w-4.f-h-4.f-border-t.f-border-r.f-bg-white.f-absolute{
+  display: none !important;
+}
+
+/* =========================================================
+   “Doručit na jinou adresu” – s viditelným checkboxem + odsazení
+   ========================================================= */
+
+.fapi-order-form .fapi-form-default-input-show-shipping-address{
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  border-radius: 16px !important;
+  padding: 10px 12px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+/* checkbox – barva a velikost */
+.fapi-order-form .fapi-form-default-input-show-shipping-address input[type="checkbox"]{
+  display: inline-block !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 !important;
+  accent-color: #656839 !important;
+  flex: 0 0 auto !important;
+}
+
+/* label – žádné “divné” odsazení */
+.fapi-order-form .fapi-form-default-input-show-shipping-address label{
+  margin: 0 !important;
+  width: auto !important;
+  flex: 1 1 auto !important;
+}
+
+/* =========================================================
+   TELEFON – předvolba průsvitná, box jednotný
+   ========================================================= */
+
+.fapi-order-form .fapi-form-default-input-phone button[type="button"]{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.fapi-order-form .fapi-form-default-input-phone input[name="phone"],
+.fapi-order-form .fapi-form-default-input-phone .phone-input{
+  background-color: #ffffff !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* =========================================================
+   STÁT (billing + shipping) – jednotné orámování
+   ========================================================= */
+
+.fapi-order-form .country-fake-input{
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+}
+
+.fapi-order-form .fapi-form-default-input-country .f-p-px,
+.fapi-order-form .fapi-form-default-input-shipping-country .f-p-px{
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.fapi-order-form .fapi-form-default-input-country button[type="button"],
+.fapi-order-form .fapi-form-default-input-shipping-country button[type="button"]{
+  background: #ffffff !important;
+  border: 2px solid #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  outline: none !important;
+  width: 100% !important;
+}
+
+/* =========================================================
+   SHRNTUTÍ OBJEDNÁVKY – bez rámečků, stejné pozadí jako stránka
+   ========================================================= */
+
+.fapi-order-form .fapi-form-result-container,
+.fapi-order-form .fapi-form-result,
+.fapi-order-form .fapi-form-result-container .f-p-6,
+.fapi-order-form .fapi-form-result-prices-group,
+.fapi-order-form .fapi-form-result-prices,
+.fapi-order-form .fapi-form-result-prices .fapi-form-prices{
+  background: #fcf1e1 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.fapi-order-form .fapi-form-prices-repayment-with-vat-label{
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  color: #6e5d2f !important;
+}
+.fapi-order-form .fapi-form-prices-repayment-with-vat-value{
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 26px !important;
+  color: #656839 !important;
+}
+
+/* =========================================================
+   FLOAT BOX “Celkem k úhradě” – design (nevnucujeme mobilní fixed)
+   ========================================================= */
+
+.fapi-order-form .fapi-float-price-container{
+  background: #fff9ef !important;
+  border: 2px dashed #e8dcc6 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 26px rgba(62, 50, 21, 0.08) !important;
+  z-index: 9999 !important;
+}
+.fapi-order-form .fapi-float-price-container .fapi-form-prices{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.fapi-order-form .fapi-float-price-container .fapi-form-prices-repayment-with-vat-value{
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  color: #656839 !important;
+}
+
+/* =========================================================
+   TLAČÍTKO “OBJEDNÁVÁM” – premium
+   ========================================================= */
+
+.fapi-order-form .fapi-submit-button{
+  background: #656839 !important;
+  color: #fffaf2 !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: 0 8px 20px rgba(101, 104, 57, 0.22) !important;
+  border-radius: 18px !important;
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 900 !important;
+}
+.fapi-order-form .fapi-submit-button:focus,
+.fapi-order-form .fapi-submit-button:focus-visible{
+  outline: none !important;
+  box-shadow: 0 10px 26px rgba(101, 104, 57, 0.26) !important;
+}
+
+/* Skrýt patičku “Vytvořeno v prodejním systému FAPI” */
+.fapi-order-form > p.f-mt-4.f-text-center.f-text-xs.f-text-gray-400{
+  display: none !important;
+}
+
+/* =========================================================
+   SLEVOVÝ KÓD (tvoje verze – beze změn)
+   ========================================================= */
+
+.fapi-order-form .fapi-form-result-discount-code > .f-flex.f-mb-2{
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  border-radius: 16px !important;
+  padding: 10px 12px !important;
+  margin: 0 0 10px 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.fapi-order-form .fapi-form-result-discount-code input[type="checkbox"]{
+  accent-color: #656839 !important;
+}
+
+.fapi-order-form .fapi-form-result-discount-code > .f-flex.f-mb-2 a{
+  color: #3e3215 !important;
+  text-decoration: none !important;
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 900 !important;
+}
+.fapi-order-form .fapi-form-result-discount-code > .f-flex.f-mb-2 a:hover{
+  opacity: 0.85 !important;
+}
+
+.fapi-order-form .fapi-form-result-discount-code .f-mt-1.f-flex.f-rounded-md.f-shadow-sm{
+  background: #fff9ef !important;
+  border: 1px solid rgba(232, 220, 198, 0.95) !important;
+  border-radius: 16px !important;
+  padding: 10px 10px !important;
+  gap: 10px !important;
+  box-shadow: none !important;
+}
+
+.fapi-order-form .fapi-form-result-discount-code input[type="text"].f-form-input{
+  background: #ffffff !important;
+  border: 2px solid rgba(232, 220, 198, 0.95) !important;
+  border-radius: 14px !important;
+  box-shadow: none !important;
+  color: #3e3215 !important;
+}
+
+.fapi-order-form .fapi-form-result-discount-code button{
+  background: #656839 !important;
+  border: 0 !important;
+  color: #fffaf2 !important;
+
+  border-radius: 14px !important;
+  padding: 10px 14px !important;
+
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 16px !important;
+
+  box-shadow: 0 8px 18px rgba(101, 104, 57, 0.18) !important;
+}
+.fapi-order-form .fapi-form-result-discount-code button:hover{
+  background: #4a4d2a !important;
+}
+.fapi-order-form .fapi-form-result-discount-code button:focus,
+.fapi-order-form .fapi-form-result-discount-code button:focus-visible{
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(101, 104, 57, 0.18) !important;
+}
+
+.fapi-order-form .fapi-form-result-discount-code .f-text-red-500{
+  color: #d16d6d !important;
+  font-weight: 700 !important;
+}
+
+/* =========================================================
+   SPECIÁLNÍ NABÍDKA (ORDER BUMP) – tvoje verze
+   ========================================================= */
+
+.fapi-order-form .order-bump-label{
+  position: relative !important;
+  overflow: hidden !important;
+
+  background-color: #fff9ef !important;
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(232,220,198,0.16) 0 10px,
+      rgba(255,249,239,0.00) 10px 22px
+    ),
+    linear-gradient(180deg, rgba(255,249,239,0.98), rgba(255,249,239,0.90)) !important;
+
+  border: 2px solid rgba(232, 220, 198, 0.98) !important;
+  border-radius: 18px !important;
+  box-shadow:
+    0 10px 26px rgba(62, 50, 21, 0.06),
+    0 0 0 4px rgba(101, 104, 57, 0.06) !important;
+
+  padding: 16px !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+.fapi-order-form .order-bump-label::before{
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 12px !important;
+  border-radius: 18px 0 0 18px !important;
+  background: linear-gradient(180deg, rgba(101,104,57,0.95), rgba(101,104,57,0.55)) !important;
+  pointer-events: none !important;
+}
+
+.fapi-order-form svg.order-bump-arrow{ display: none !important; }
+
+.fapi-order-form .order-bump-label > input[type="checkbox"]{
+  float: none !important;
+  margin: 2px 0 0 14px !important;
+  accent-color: #656839 !important;
+}
+
+.fapi-order-form .order-bump-label .f--mt-1.f-ml-2{
+  margin: 0 !important;
+  width: 100% !important;
+  padding-right: 0 !important;
+}
+
+.fapi-order-form .order-bump-label label{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
+.fapi-order-form .order-bump-label label span{
+  display: block !important;
+  position: relative !important;
+}
+
+.fapi-order-form .order-bump-label label span::before{
+  content: "Doporučujeme ⭐" !important;
+  display: inline-block !important;
+
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  background: rgba(101, 104, 57, 0.10) !important;
+  border: 1px solid rgba(101, 104, 57, 0.22) !important;
+
+  color: #4a4d2a !important;
+  font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 13px !important;
+
+  float: right !important;
+  margin: 0 0 6px 0 !important;
+}
+
+.fapi-order-form .order-bump-label p{
+  margin: 0 !important;
+  color: #3e3215 !important;
+  font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+}
+.fapi-order-form .order-bump-label strong{
+  font-weight: 900 !important;
+  color: #3e3215 !important;
+}
+
+/* “Nejoblíbenější trojka” – sjednocení fontu */
+.fapi-order-form .order-bump-space .f-px-3 p{
+  margin: 10px 0 0 0 !important;
+  font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.35 !important;
+  color: #3e3215 !important;
+}
+.fapi-order-form .order-bump-space .f-px-3 strong{
+  font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-weight: 900 !important;
+}
+
+/* =========================================================
+   MOBILNÍ DOLAĎENÍ
+   - kompaktnější ovládání
+   - hlavně: žádná umělá “prázdná” výška na konci
+   ========================================================= */
+
+@media (max-width: 520px){
+
+  .fapi-order-form .fapi-form-item{
+    padding: 12px 12px !important;
+    column-gap: 10px !important;
+  }
+
+  .fapi-order-form .fapi-form-item label span.f-inline{
+    font-size: 15px !important;
+  }
+
+  .fapi-order-form .fapi-form-item > .f-flex.f-flex-col-reverse{
+    gap: 8px !important;
+  }
+
+  .fapi-order-form .fapi-form-item .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center{
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .fapi-order-form .fapi-form-item input[type="number"].f-form-input{
+    width: 52px !important;
+    height: 26px !important;
+    line-height: 26px !important;
+    font-size: 15px !important;
+  }
+
+  .fapi-order-form .fapi-form-item-price{
+    padding: 5px 9px !important;
+    font-size: 15px !important;
+  }
+
+  .fapi-order-form .f-line-through.fapi-form-item-price{
+    font-size: 11px !important;
+  }
+
+  /* Důležité: zrušeno původní “padding-bottom 120px”, které dělalo prázdný konec */
+  .fapi-order-form{
+    padding-bottom: 24px !important;
+  }
+}
