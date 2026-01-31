@@ -1,5 +1,5 @@
 /* =========================================================
-   HOVÍNEK – FAPI THEME (v10.3)
+   HOVÍNEK – FAPI THEME (v10.4)
    Platí pouze uvnitř .fapi-order-form
    ========================================================= */
 
@@ -15,14 +15,23 @@ html, body { background: #fcf1e1 !important; }
   font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
   color: #3e3215 !important;
 
-  /* vínová (podle barvy “399 Kč” na screenshotu) */
+  /* barvy */
+  --hovinek-green: #656839 !important;          /* jako tlačítko Objednávám */
+  --hovinek-green-dark: #4a4d2a !important;
+
+  /* vínová (podle “399 Kč”) */
   --hovinek-wine: #b96562 !important;
   --hovinek-wine-dark: #a45552 !important;
   --hovinek-wine-soft: rgba(185, 101, 98, 0.40) !important;
+
+  /* světlá (na tmavém pozadí) */
+  --hovinek-cream: #fffaf2 !important;
+  --hovinek-cream-soft: rgba(255, 250, 242, 0.16) !important;
+  --hovinek-cream-border: rgba(255, 250, 242, 0.28) !important;
 }
 
 /* =========================================================
-   NADPISY BLOKŮ (Položky a ceny, Fakturační údaje, Shrnutí...)
+   NADPISY BLOKŮ
    ========================================================= */
 
 .fapi-order-form .fapi-container-header,
@@ -92,7 +101,7 @@ html, body { background: #fcf1e1 !important; }
 .fapi-order-form select:focus,
 .fapi-order-form textarea:focus,
 .fapi-order-form .f-form-input:focus{
-  border-color: #656839 !important;
+  border-color: var(--hovinek-green) !important;
   box-shadow: 0 0 0 4px rgba(101, 104, 57, 0.16) !important;
 }
 
@@ -197,7 +206,7 @@ html, body { background: #fcf1e1 !important; }
   height: 28px !important;
 }
 .fapi-order-form .fapi-form-item .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center svg{
-  color: #656839 !important;
+  color: var(--hovinek-green) !important;
 }
 
 /* input množství */
@@ -285,7 +294,7 @@ html, body { background: #fcf1e1 !important; }
   width: 16px !important;
   height: 16px !important;
   margin: 4px 0 0 0 !important;
-  accent-color: #656839 !important;
+  accent-color: var(--hovinek-green) !important;
   flex: 0 0 auto !important;
 }
 
@@ -366,11 +375,11 @@ html, body { background: #fcf1e1 !important; }
   font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
   font-weight: 900 !important;
   font-size: 26px !important;
-  color: #656839 !important;
+  color: var(--hovinek-green) !important;
 }
 
 /* =========================================================
-   FLOAT BOX “Celkem k úhradě” – design
+   FLOAT BOX “Celkem k úhradě” – design + FIX ZAROVNÁNÍ
    ========================================================= */
 
 .fapi-order-form .fapi-float-price-container{
@@ -379,7 +388,29 @@ html, body { background: #fcf1e1 !important; }
   border-radius: 16px !important;
   box-shadow: 0 10px 26px rgba(62, 50, 21, 0.08) !important;
   z-index: 9999 !important;
+
+  /* FIX: nenechat skript občas posunout více vlevo */
+  left: auto !important;
+
+  /* fallback pro starší prohlížeče */
+  right: 12px !important;
+
+  /* zarovnání k pravému okraji centrovaného wrapperu (max 1200px) */
+  right: max(12px, calc((100vw - 1200px)/2 + 12px)) !important;
+
+  /* FIX: některé instance mají inline max-width:0px */
+  max-width: 420px !important;
+  width: auto !important;
 }
+
+@media (max-width: 640px){
+  .fapi-order-form .fapi-float-price-container{
+    left: 12px !important;
+    right: 12px !important;
+    max-width: none !important;
+  }
+}
+
 .fapi-order-form .fapi-float-price-container .fapi-form-prices{
   background: transparent !important;
   border: 0 !important;
@@ -388,7 +419,7 @@ html, body { background: #fcf1e1 !important; }
 .fapi-order-form .fapi-float-price-container .fapi-form-prices-repayment-with-vat-value{
   font-size: 28px !important;
   font-weight: 900 !important;
-  color: #656839 !important;
+  color: var(--hovinek-green) !important;
 }
 
 /* =========================================================
@@ -396,8 +427,8 @@ html, body { background: #fcf1e1 !important; }
    ========================================================= */
 
 .fapi-order-form .fapi-submit-button{
-  background: #656839 !important;
-  color: #fffaf2 !important;
+  background: var(--hovinek-green) !important;
+  color: var(--hovinek-cream) !important;
   border: 0 !important;
   outline: none !important;
   box-shadow: 0 8px 20px rgba(101, 104, 57, 0.22) !important;
@@ -433,7 +464,7 @@ html, body { background: #fcf1e1 !important; }
 }
 
 .fapi-order-form .fapi-form-result-discount-code input[type="checkbox"]{
-  accent-color: #656839 !important;
+  accent-color: var(--hovinek-green) !important;
 }
 
 .fapi-order-form .fapi-form-result-discount-code > .f-flex.f-mb-2 a{
@@ -464,9 +495,9 @@ html, body { background: #fcf1e1 !important; }
 }
 
 .fapi-order-form .fapi-form-result-discount-code button{
-  background: #656839 !important;
+  background: var(--hovinek-green) !important;
   border: 0 !important;
-  color: #fffaf2 !important;
+  color: var(--hovinek-cream) !important;
 
   border-radius: 14px !important;
   padding: 10px 14px !important;
@@ -478,7 +509,7 @@ html, body { background: #fcf1e1 !important; }
   box-shadow: 0 8px 18px rgba(101, 104, 57, 0.18) !important;
 }
 .fapi-order-form .fapi-form-result-discount-code button:hover{
-  background: #4a4d2a !important;
+  background: var(--hovinek-green-dark) !important;
 }
 .fapi-order-form .fapi-form-result-discount-code button:focus,
 .fapi-order-form .fapi-form-result-discount-code button:focus-visible{
@@ -504,16 +535,16 @@ html, body { background: #fcf1e1 !important; }
 .fapi-order-form .fapi-container-header.order-bump,
 .fapi-order-form .fapi-container-header.order-bump .fapi-form-basic-block-title,
 .fapi-order-form .fapi-container-header.order-bump .fapi-form-basic-block-title *{
-  color: #fffaf2 !important;
+  color: var(--hovinek-cream) !important;
 }
 
-/* přerušovaná čára kolem celé sekce (ta, co ti zůstala červená) */
+/* přerušovaná čára kolem celé sekce */
 .fapi-order-form .order-bump-content{
   border-left: 4px dashed var(--hovinek-wine) !important;
   border-right: 4px dashed var(--hovinek-wine) !important;
   border-bottom: 4px dashed var(--hovinek-wine) !important;
   border-top: 0 !important;
-  border-radius: 0 !important; /* rohy jako na screenshotu */
+  border-radius: 0 !important;
 }
 
 /* samotná “karta” nabídky */
@@ -613,7 +644,7 @@ html, body { background: #fcf1e1 !important; }
   color: #3e3215 !important;
 }
 
-/* “Nejoblíbenější trojka” – sjednocení fontu */
+/* “Nejoblíbenější trojka” */
 .fapi-order-form .order-bump-space .f-px-3 p{
   margin: 10px 0 0 0 !important;
   font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
@@ -628,10 +659,8 @@ html, body { background: #fcf1e1 !important; }
 
 /* =========================================================
    FOXENTRY – centrovat “zelenou fajfku” do inputů
-   (řeší inline top/left, které ti to rozhodí)
    ========================================================= */
 
-/* bezpečné: wrapper pro foxentry loading */
 .fapi-order-form .foxentry-input-loading{
   position: relative !important;
 }
@@ -641,7 +670,7 @@ html, body { background: #fcf1e1 !important; }
   position: relative !important;
 }
 
-/* samotná ikonka – přebít inline top/left */
+/* ikonka – přebít inline top/left */
 .fapi-order-form .foxentry-input-icon{
   position: absolute !important;
   top: 50% !important;
@@ -657,6 +686,69 @@ html, body { background: #fcf1e1 !important; }
 /* aby text nenarážel do ikonky */
 .fapi-order-form input.foxentry-input{
   padding-right: 44px !important;
+}
+
+/* =========================================================
+   POLOŽKY A CENY + MAXI BALENÍ – pozadí položek jako tlačítko
+   ========================================================= */
+
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item,
+.fapi-order-form .fapi-form-item-group-192516 .fapi-form-item{
+  background: var(--hovinek-green) !important;
+  border: 1px solid var(--hovinek-cream-border) !important;
+}
+
+/* texty v řádcích položek – světlé */
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item label,
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item label span,
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item span,
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item .fapi-form-item-price,
+.fapi-order-form .fapi-form-item-group-192516 .fapi-form-item label,
+.fapi-order-form .fapi-form-item-group-192516 .fapi-form-item label span,
+.fapi-order-form .fapi-form-item-group-192516 .fapi-form-item span,
+.fapi-order-form .fapi-form-item-group-192516 .fapi-form-item .fapi-form-item-price{
+  color: var(--hovinek-cream) !important;
+}
+
+/* tlačítka + / - v tmavém řádku */
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center,
+.fapi-order-form .fapi-form-item-group-192516 .fapi-form-item .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center{
+  background: var(--hovinek-cream-soft) !important;
+  border: 1px solid var(--hovinek-cream-border) !important;
+}
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center svg,
+.fapi-order-form .fapi-form-item-group-192516 .fapi-form-item .f-flex-shrink-0.f-w-6.f-h-6.f-grid.f-place-content-center svg{
+  color: var(--hovinek-cream) !important;
+}
+
+/* input množství v tmavém řádku */
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item input[type="number"].f-form-input,
+.fapi-order-form .fapi-form-item-group-192516 .fapi-form-item input[type="number"].f-form-input{
+  background: var(--hovinek-cream-soft) !important;
+  border: 1px solid var(--hovinek-cream-border) !important;
+  color: var(--hovinek-cream) !important;
+}
+
+/* pilulka ceny v tmavém řádku */
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item .fapi-form-item-price,
+.fapi-order-form .fapi-form-item-group-192516 .fapi-form-item .fapi-form-item-price{
+  background: var(--hovinek-cream-soft) !important;
+  border: 1px solid var(--hovinek-cream-border) !important;
+}
+
+/* přeškrtnutá původní cena v tmavém řádku */
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item .f-line-through.fapi-form-item-price,
+.fapi-order-form .fapi-form-item-group-192516 .fapi-form-item .f-line-through.fapi-form-item-price{
+  color: rgba(255, 250, 242, 0.75) !important;
+  opacity: 1 !important;
+}
+
+/* zlevněná cena – necháváme vínovou i na tmavém */
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item .fapi-form-discounted-price.fapi-form-item-price,
+.fapi-order-form .fapi-form-item-group-192516 .fapi-form-item .fapi-form-discounted-price.fapi-form-item-price{
+  background: rgba(255, 249, 239, 0.92) !important;
+  border: 1px solid var(--hovinek-wine-soft) !important;
+  color: var(--hovinek-wine) !important;
 }
 
 /* =========================================================
