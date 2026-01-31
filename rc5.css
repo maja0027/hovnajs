@@ -1,5 +1,5 @@
 /* =========================================================
-   HOVÍNEK – FAPI THEME (v10.2)
+   HOVÍNEK – FAPI THEME (v10.3)
    Platí pouze uvnitř .fapi-order-form
    ========================================================= */
 
@@ -15,10 +15,10 @@ html, body { background: #fcf1e1 !important; }
   font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
   color: #3e3215 !important;
 
-  /* vínová (podle barvy ceny 399 Kč ze screenshotu) */
-  --hovinek-wine: #bc6c68 !important;
-  --hovinek-wine-dark: #a85652 !important;
-  --hovinek-wine-soft: rgba(188, 108, 104, 0.40) !important;
+  /* vínová (podle barvy “399 Kč” na screenshotu) */
+  --hovinek-wine: #b96562 !important;
+  --hovinek-wine-dark: #a45552 !important;
+  --hovinek-wine-soft: rgba(185, 101, 98, 0.40) !important;
 }
 
 /* =========================================================
@@ -267,7 +267,6 @@ html, body { background: #fcf1e1 !important; }
 
 /* =========================================================
    “Doručit na jinou adresu” – s viditelným checkboxem
-   (VELIKOST checkboxu stejná jako u “Mám slevový kód” a order bump)
    ========================================================= */
 
 .fapi-order-form .fapi-form-default-input-show-shipping-address{
@@ -281,8 +280,6 @@ html, body { background: #fcf1e1 !important; }
   gap: 10px !important;
 }
 
-/* checkbox – stejná velikost jako typický FAPI checkbox (w-4 h-4 = 16px)
-   + opticky stejné zarovnání (mt-1) jako u “Mám slevový kód” */
 .fapi-order-form .fapi-form-default-input-show-shipping-address input[type="checkbox"]{
   display: inline-block !important;
   width: 16px !important;
@@ -292,7 +289,6 @@ html, body { background: #fcf1e1 !important; }
   flex: 0 0 auto !important;
 }
 
-/* label – bez divných odsazení */
 .fapi-order-form .fapi-form-default-input-show-shipping-address label{
   margin: 0 !important;
   width: auto !important;
@@ -496,14 +492,13 @@ html, body { background: #fcf1e1 !important; }
 }
 
 /* =========================================================
-   SPECIÁLNÍ NABÍDKA (ORDER BUMP) – TITULEK + ORÁMOVÁNÍ VÍNOVĚ
-   (barva podle “399 Kč”)
+   SPECIÁLNÍ NABÍDKA (ORDER BUMP) – vínově (titulek + rámečky)
    ========================================================= */
 
-/* Titulek "Speciální nabídka" – vínové pozadí + bílé písmo */
+/* Titulek "Speciální nabídka" */
 .fapi-order-form .fapi-container-header.order-bump{
   background: var(--hovinek-wine) !important;
-  border: 1px solid rgba(188, 108, 104, 0.75) !important;
+  border: 1px solid rgba(185, 101, 98, 0.80) !important;
   border-radius: 18px !important;
 }
 .fapi-order-form .fapi-container-header.order-bump,
@@ -512,7 +507,16 @@ html, body { background: #fcf1e1 !important; }
   color: #fffaf2 !important;
 }
 
-/* samotná nabídka – orámování vínově */
+/* přerušovaná čára kolem celé sekce (ta, co ti zůstala červená) */
+.fapi-order-form .order-bump-content{
+  border-left: 4px dashed var(--hovinek-wine) !important;
+  border-right: 4px dashed var(--hovinek-wine) !important;
+  border-bottom: 4px dashed var(--hovinek-wine) !important;
+  border-top: 0 !important;
+  border-radius: 0 !important; /* rohy jako na screenshotu */
+}
+
+/* samotná “karta” nabídky */
 .fapi-order-form .order-bump-label{
   position: relative !important;
   overflow: hidden !important;
@@ -530,7 +534,7 @@ html, body { background: #fcf1e1 !important; }
   border-radius: 18px !important;
   box-shadow:
     0 10px 26px rgba(62, 50, 21, 0.06),
-    0 0 0 4px rgba(188, 108, 104, 0.08) !important;
+    0 0 0 4px rgba(185, 101, 98, 0.08) !important;
 
   padding: 16px !important;
 
@@ -539,7 +543,7 @@ html, body { background: #fcf1e1 !important; }
   gap: 12px !important;
 }
 
-/* levný “pruh” – vínově (místo zelené) */
+/* levý pruh – vínově */
 .fapi-order-form .order-bump-label::before{
   content: "" !important;
   position: absolute !important;
@@ -554,7 +558,6 @@ html, body { background: #fcf1e1 !important; }
 
 .fapi-order-form svg.order-bump-arrow{ display: none !important; }
 
-/* checkbox – vínově */
 .fapi-order-form .order-bump-label > input[type="checkbox"]{
   float: none !important;
   margin: 2px 0 0 14px !important;
@@ -579,7 +582,6 @@ html, body { background: #fcf1e1 !important; }
   position: relative !important;
 }
 
-/* “Doporučujeme ⭐” – necháváme jemné, ale ladíme okraj vínově */
 .fapi-order-form .order-bump-label label span::before{
   content: "Doporučujeme ⭐" !important;
   display: inline-block !important;
@@ -625,7 +627,40 @@ html, body { background: #fcf1e1 !important; }
 }
 
 /* =========================================================
-   MOBILNÍ DOLAĎENÍ (kompaktnější, bez prázdného konce)
+   FOXENTRY – centrovat “zelenou fajfku” do inputů
+   (řeší inline top/left, které ti to rozhodí)
+   ========================================================= */
+
+/* bezpečné: wrapper pro foxentry loading */
+.fapi-order-form .foxentry-input-loading{
+  position: relative !important;
+}
+
+/* wrapper pro pole, kde foxentry přidá ikonku (moderní prohlížeče) */
+.fapi-order-form .f-w-full:has(.foxentry-input-icon){
+  position: relative !important;
+}
+
+/* samotná ikonka – přebít inline top/left */
+.fapi-order-form .foxentry-input-icon{
+  position: absolute !important;
+  top: 50% !important;
+  right: 12px !important;
+  left: auto !important;
+  transform: translateY(-50%) !important;
+
+  margin: 0 !important;
+  pointer-events: none !important;
+  z-index: 6 !important;
+}
+
+/* aby text nenarážel do ikonky */
+.fapi-order-form input.foxentry-input{
+  padding-right: 44px !important;
+}
+
+/* =========================================================
+   MOBILNÍ DOLAĎENÍ
    ========================================================= */
 
 @media (max-width: 520px){
