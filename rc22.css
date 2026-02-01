@@ -625,15 +625,21 @@ html, body { background: #fcf1e1 !important; }
   max-height: 175px !important;
   padding-bottom: 28px !important;
 }
-.fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 .fapi-item-image::after{
+/* Max Trojka – badge "3× Max" (IMG nemá ::after, dáváme na label) */
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 label{
+  position: relative !important; /* kotva pro badge */
+}
+
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 label::after{
   content: "3× Max" !important;
   position: absolute !important;
-  right: 10px !important;
+
+  /* vpravo dole v rohu produktového obrázku */
+  left: 10px !important;
   bottom: 10px !important;
 
   padding: 6px 10px !important;
   border-radius: 999px !important;
-
   background: rgba(255, 250, 242, 0.92) !important;
   border: 1px solid rgba(232, 220, 198, 0.95) !important;
 
@@ -644,6 +650,7 @@ html, body { background: #fcf1e1 !important; }
 
   box-shadow: 0 6px 14px rgba(62, 50, 21, 0.10) !important;
   pointer-events: none !important;
+  z-index: 5 !important;
 }
 
 /* =========================================================
