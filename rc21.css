@@ -635,7 +635,7 @@ html, body { background: #fcf1e1 !important; }
   position: absolute !important;
 
   /* vpravo dole v rohu produktového obrázku */
-  left: 10px !important;
+  right: 10px !important;
   bottom: 10px !important;
 
   padding: 6px 10px !important;
