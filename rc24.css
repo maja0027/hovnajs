@@ -625,11 +625,24 @@ html, body { background: #fcf1e1 !important; }
   padding-bottom: 22px !important;
 }
 
-/* badge "3× Max" – kotva na labelu */
+/* Max Trojka – label NESMÍ být 100% šířky, jinak ujíždí badge */
 .fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 label{
-  position: relative !important;
-  display: inline-block !important;
-  width: 100% !important;
+  position: relative !important; /* kotva pro badge */
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+
+  width: fit-content !important;     /* KLÍČOVÉ */
+  max-width: 260px !important;       /* stejné jako obrázek */
+}
+
+/* název nesmí roztáhnout label víc než obrázek */
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 label span.f-inline{
+  max-width: 260px !important;
+}
+
+/* název nesmí roztáhnout label víc než obrázek */
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 label span.f-inline{
   max-width: 260px !important;
 }
 
@@ -908,12 +921,17 @@ html, body { background: #fcf1e1 !important; }
     margin-top: 6px !important;
   }
 
-  /* aby badge zůstal přesně na obrázku */
-  .fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 label{
-    max-width: 240px !important;
-    width: 100% !important;
-    display: inline-block !important;
-  }
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 label{
+  max-width: 240px !important;
+  width: fit-content !important;
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 label span.f-inline{
+  max-width: 240px !important;
+}
 
   .fapi-order-form{
     padding-bottom: 24px !important;
