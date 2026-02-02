@@ -640,23 +640,26 @@ html, body { background: #fcf1e1 !important; }
   padding-bottom: 30px !important;
 }
 
-/* Max Trojka – label šířka */
-.fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 label{
-  position: relative !important;
-  max-width: 260px !important;
+/* Max Trojka – badge "3× Max" ukotvit do bílého boxu obrázku (stabilní a krásně odsazené) */
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 .fapi-item-image{
+  position: relative !important; /* kotva pro badge */
 }
 
-/* badge "3× Max" */
+/* už to NECHCEME kotvit na label, aby to neujelo k okraji */
 .fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 label::after{
+  content: none !important;
+}
+
+.fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 .fapi-item-image::after{
   content: "3× Max" !important;
   position: absolute !important;
 
-  right: 20px !important;
-  bottom: 18px !important;
+  right: 16px !important;   /* hezký „safe inset“ na desktopu */
+  bottom: 14px !important;
 
   padding: 6px 10px !important;
   border-radius: 999px !important;
-  background: rgba(255, 250, 242, 0.92) !important;
+  background: rgba(255, 250, 242, 0.94) !important;
   border: 1px solid rgba(232, 220, 198, 0.95) !important;
 
   font-family: "Baloo 2", Nunito, system-ui, sans-serif !important;
@@ -1008,8 +1011,8 @@ html, body { background: #fcf1e1 !important; }
     max-width: 240px !important;
   }
   .fapi-order-form .fapi-form-item-group-0 .fapi-form-item-6 label::after{
-    right: 14px !important;
-    bottom: 14px !important;
+    right: 12px !important;
+    bottom: 12px !important;
   }
 
   .fapi-order-form{
